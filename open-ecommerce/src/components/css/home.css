@@ -1,0 +1,62 @@
+@import 'root.css';
+
+.home-container {
+    width: 100%;
+    padding: 20px 70px;
+}
+
+.home-container .products-form {
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+.home-container .products-form form {
+    display: flex;
+    justify-content: space-between;
+}
+
+.filter-container {
+    display: flex;
+    width: 40%;
+    justify-content: space-between;
+}
+
+.sortBy-container {
+    display: flex;
+    width: 40%;
+    justify-content: space-evenly;
+}
+
+
+
+/* Products/Main */
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.box {
+    width: 400px;
+    height: 300px ;
+    margin-top: 20px;
+    margin-left: 30px;
+    background-color: var(--border-color);
+    overflow: hidden;
+    box-shadow: 10px;
+    border: 1px solid var(--nav-bg-color-dark);
+}
+
+.box .image-box img {
+    object-fit: cover;
+    width: 100%;
+    height: 200px;
+    /* display: flex; */
+    justify-content: center;
+}
+
+.old-price {
+    text-decoration: line-through;
+    font-size: 14px;
+}

@@ -1,0 +1,42 @@
+@import 'root.css';
+
+.contact-container {
+    width: 100%;
+    padding: 40px 100px;
+
+}
+
+.contact-form {
+    margin-top: 40px;
+}
+
+.input-container {
+    padding: 10px 0;
+}
+
+.input-container label {
+    margin-bottom: 10px;
+}
+
+.input-container input,
+.input-container textarea {
+    width: 100%;
+    padding: 10px 5px;
+    margin: 5px 0;
+}
+
+.input-container button {
+    background-color: var(--purple-btn-color);
+    color: var(--white-text-color);
+    width: 100%;
+    padding: 12px 0;
+    margin: 5px 0;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.country-contact select {
+    width: 100%;
+    padding: 10px 15px;
+cursor: pointer;
+}

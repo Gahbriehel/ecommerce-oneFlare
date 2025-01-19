@@ -1,0 +1,54 @@
+@import 'root.css';
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 70px;
+    /* top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 1000;*/
+    width: 100%; 
+    /* margin-bottom: 80px; */
+}
+
+.nav-container .nav-left {
+    width: 80%;
+
+}
+
+.nav-container .nav-left ul {
+    display: flex;
+    align-items: center;
+    /* justify-content: space-around left; */
+
+}
+
+.nav-container .nav-left ul li {
+    list-style: none;
+    margin-right: 10rem;
+    text-transform: uppercase;
+
+}
+
+.nav-container .nav-left ul li .nav-link {
+    text-decoration: none;
+    color: var(--primary-text-color);
+
+}
+
+.nav-container .nav-right {
+    /* width: 20%; */
+    display: flex;
+    align-items: center;
+}
+
+.nav-container .nav-right span {
+    margin-left: 5rem;
+font-size: 21px;
+cursor: pointer;
+}
+
+.nav-container .nav-left ul li .link-active {
+    color: var(--primary-blue-color);
+}

@@ -1,0 +1,19 @@
+.footer-container {
+    width: 100%;
+    padding: 20px ;
+}
+
+.socials {
+    margin: 20px 0 0 20px;
+}
+
+.socials .social-icons img {
+    margin-right: 20px;
+    margin-top: 10px;
+}
+
+.country select {
+    padding: 5px 10px;
+    width: 10%;
+    margin-top: 5px;
+}

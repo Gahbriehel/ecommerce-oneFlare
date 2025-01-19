@@ -1,0 +1,23 @@
+:root {
+    --primary-text-color: #000000;
+    --white-text-color: #ffffff;
+
+    --primary-blue-color: #1877F2;
+
+    /* Border colors */
+    --gray-border-color: #808080;
+
+    /* Button colors */
+    --brown-btn-color: #5F3905;
+    --coffee-btn-color: #352003;
+    --black-btn-color: #000000;
+    --off-white-btn-color: #EDEBE9;
+    --purple-btn-color: #5153E7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
