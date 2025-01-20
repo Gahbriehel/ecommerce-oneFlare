@@ -20,9 +20,10 @@ const Checkout = () => {
             </div>
             <div className="custom-tip">
                 <label htmlFor="custom-tip">Custom Tip:</label>
-                <input type="number" id="custom-tip" name="custom-tip" />
+                <br />
+                <input type="number" id="custom-tip" name="custom-tip" placeholder="Enter custom tip" />
             </div>
-            <p>Thank you, we appreciate it!</p>
+            <p><strong>Thank you, we appreciate it!</strong></p>
         </div>
     );
 
