@@ -60,3 +60,11 @@
     text-decoration: line-through;
     font-size: 14px;
 }
+
+/* Media queries */
+@media (max-width: 1700px) {
+    .box {
+        width: 320px;
+    height: 300px ;
+    }
+}

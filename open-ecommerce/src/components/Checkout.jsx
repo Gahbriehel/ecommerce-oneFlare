@@ -246,7 +246,7 @@ const Checkout = () => {
                 </form>
             </div>
             <div className="checkout-right">
-                <h3>Product information box comes here</h3>
+                <h3>Product information comes here</h3>
             </div>
         </div>
     );
