@@ -1,13 +1,14 @@
 import { useState } from "react";
+import './css/checkout.css'
 
 const Checkout = () => {
     const [billingOption, setBillingOption] = useState("same");
 
-    const handleBillingOptionChange = (event) => {
-        setBillingOption(event.target.value);
+    const handleBillingOptionChange = (e) => {
+        setBillingOption(e.target.value);
     };
 
-    const renderTipSection = () => (
+    const tipSection = () => (
         <div className="tip-section">
             <h2>Add Tip</h2>
             <div className="tip-buttons">
@@ -29,10 +30,14 @@ const Checkout = () => {
         <div className="payment-section">
             <h2>Payment</h2>
             <div className="payment-logos">
-                <img src="/path-to-paystack-logo" alt="Paystack" />
-                <img src="/path-to-mastercard-logo" alt="Mastercard" />
-                <img src="/path-to-maestro-logo" alt="Maestro" />
-                <img src="/path-to-visa-logo" alt="Visa" />
+                <div className="payment-logo-left">
+                    <img src="/images/paystack.png" alt="Paystack" />
+                </div>
+                <div className="payment-logo-right">
+                    <img src="/images/mastercard.png" alt="Mastercard" />
+                    <img src="/images/maestro.png" alt="Maestro" />
+                    <img src="/images/visa.png" alt="Visa" />
+                </div>
             </div>
             <button type="button" className="pay-button">
                 Pay
@@ -44,7 +49,6 @@ const Checkout = () => {
         <div className="checkout-page-container">
             <div className="checkout-contact">
                 <form>
-                    {/* Contact Section */}
                     <div className="form-container contact">
                         <h1>Contact</h1>
                         <label htmlFor="email">Email or Phone number:</label>
@@ -54,13 +58,13 @@ const Checkout = () => {
                             name="email"
                             id="email"
                             aria-label="Email or Phone number"
+                            placeholder="Enter Email or Phone Number"
                         />
                         <br />
-                        <input type="checkbox" name="emailCheck" id="emailCheck" />
+                        <input type="radio" name="emailCheck" id="emailCheck" />
                         <label htmlFor="emailCheck">Email me with news and offers</label>
                     </div>
 
-                    {/* Delivery Section */}
                     <div className="form-container delivery">
                         <h1>Delivery</h1>
                         <div className="name-div">
@@ -72,6 +76,7 @@ const Checkout = () => {
                                     name="fname"
                                     id="fname"
                                     aria-label="First name"
+                                    placeholder="Enter first name"
                                 />
                             </div>
                             <div className="lname">
@@ -82,6 +87,7 @@ const Checkout = () => {
                                     name="lname"
                                     id="lname"
                                     aria-label="Last name"
+                                    placeholder="Enter last name"
                                 />
                             </div>
                         </div>
@@ -92,6 +98,7 @@ const Checkout = () => {
                             name="apartment"
                             id="apartment"
                             aria-label="Apartment"
+                            placeholder="Enter apartment, suite, etc"
                         />
                         <br />
                         <label htmlFor="address">Address:</label>
@@ -101,6 +108,7 @@ const Checkout = () => {
                             name="address"
                             id="address"
                             aria-label="Address"
+                            placeholder="Enter address"
                         />
                         <div className="address-div">
                             <div className="state">
@@ -110,11 +118,12 @@ const Checkout = () => {
                                     name="state"
                                     id="state"
                                     aria-label="State"
+                                    placeholder="Enter state"
                                 />
                             </div>
                             <div className="city">
                                 <label htmlFor="city">City:</label>
-                                <input type="text" name="city" id="city" aria-label="City" />
+                                <input type="text" name="city" id="city" aria-label="City" placeholder="Enter city" />
                             </div>
                             <div className="postal-code">
                                 <label htmlFor="postal">Postal code (optional):</label>
@@ -123,43 +132,46 @@ const Checkout = () => {
                                     name="postal"
                                     id="postal"
                                     aria-label="Postal code"
+                                    placeholder="Enter postal code"
                                 />
                             </div>
                         </div>
-                        <input type="checkbox" name="save-delivery-info" id="save-delivery-info" />
+                        <input type="radio" name="save-delivery-info" id="save-delivery-info" />
                         <label htmlFor="save-delivery-info">Save this information for later</label>
                     </div>
 
-                    {/* Billing Section */}
                     <div className="form-container billing">
                         <h1>Billing Address</h1>
                         <div className="billing-options">
-                            <input
-                                type="radio"
-                                id="same-shipping-address"
-                                name="billingOption"
-                                value="same"
-                                checked={billingOption === "same"}
-                                onChange={handleBillingOptionChange}
-                            />
-                            <label htmlFor="same-shipping-address">Same as shipping address</label>
-                            <br />
-                            <input
-                                type="radio"
-                                id="diff-shipping-address"
-                                name="billingOption"
-                                value="different"
-                                checked={billingOption === "different"}
-                                onChange={handleBillingOptionChange}
-                            />
-                            <label htmlFor="diff-shipping-address">
-                                Different from shipping address
-                            </label>
+                            <div className="billing-option">
+                                <input
+                                    type="radio"
+                                    id="same-shipping-address"
+                                    name="billingOption"
+                                    value="same"
+                                    checked={billingOption === "same"}
+                                    onChange={handleBillingOptionChange}
+                                />
+                                <label htmlFor="same-shipping-address">Same as shipping address</label>
+                            </div>
+                            <div className="billing-option">
+                                <input
+                                    type="radio"
+                                    id="diff-shipping-address"
+                                    name="billingOption"
+                                    value="different"
+                                    checked={billingOption === "different"}
+                                    onChange={handleBillingOptionChange}
+                                />
+                                <label htmlFor="diff-shipping-address">
+                                    Different from shipping address
+                                </label>
+                            </div>
+
                         </div>
 
                         {billingOption === "different" && (
                             <div className="additional-billing-fields">
-                                {/* Repeat Delivery Form */}
                                 <div className="name-div">
                                     <div className="fname">
                                         <label htmlFor="billing-fname">First name:</label>
@@ -169,6 +181,7 @@ const Checkout = () => {
                                             name="billing-fname"
                                             id="billing-fname"
                                             aria-label="First name"
+                                            placeholder="Enter first name"
                                         />
                                     </div>
                                     <div className="lname">
@@ -179,6 +192,7 @@ const Checkout = () => {
                                             name="billing-lname"
                                             id="billing-lname"
                                             aria-label="Last name"
+                                            placeholder="Enter last name"
                                         />
                                     </div>
                                 </div>
@@ -189,6 +203,7 @@ const Checkout = () => {
                                     name="billing-address"
                                     id="billing-address"
                                     aria-label="Address"
+                                    placeholder="Enter address"
                                 />
                                 <div className="address-div">
                                     <div className="state">
@@ -198,6 +213,7 @@ const Checkout = () => {
                                             name="billing-state"
                                             id="billing-state"
                                             aria-label="State"
+                                            placeholder="Enter state"
                                         />
                                     </div>
                                     <div className="city">
@@ -207,6 +223,7 @@ const Checkout = () => {
                                             name="billing-city"
                                             id="billing-city"
                                             aria-label="City"
+                                            placeholder="Enter city"
                                         />
                                     </div>
                                     <div className="postal-code">
@@ -216,17 +233,19 @@ const Checkout = () => {
                                             name="billing-postal"
                                             id="billing-postal"
                                             aria-label="Postal code"
+                                            placeholder="Enter postal code"
                                         />
                                     </div>
                                 </div>
                             </div>
                         )}
                     </div>
-
-                    {/* Tip and Payment Section */}
-                    {renderTipSection()}
+                    {tipSection()}
                     {renderPaymentSection()}
                 </form>
+            </div>
+            <div className="checkout-right">
+                <h3>Product information box comes here</h3>
             </div>
         </div>
     );

@@ -1,0 +1,59 @@
+.checkout-page-container {
+    display: flex;
+    width: 100%;
+    padding: 40px 100px;
+}
+
+.checkout-contact {
+    width: 50%;
+}
+
+.checkout-right {
+    background-color: var(--off-white-btn-color);
+    margin-left: 20px;
+}
+
+.form-container {
+    margin: 10px 0;
+}
+
+.form-container h1 {
+    margin: 20px 0;
+    font-weight: 500;
+}
+
+.form-container input[type="text"] {
+    width: 100%;
+    padding: 10px 10px;
+    margin: 10px 0;
+}
+
+.form-container input[type="radio"] {
+    margin-right: 5px;
+}
+
+.form-container input::placeholder {
+    font-size: 16px;
+}
+
+.form-container .name-div {
+    display: grid;
+    grid-template-columns: 45% 45%;
+    justify-content: space-between;
+    margin: 15px 0;
+}
+
+.form-container .address-div {
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    justify-content: space-between;
+    margin: 15px 0 0 0;
+}
+
+.form-container .billing-options .billing-option {
+    border: 1px solid var(--off-white-btn-color);
+    padding: 20px;
+    margin: 8px 0;
+    font-size: 19px;
+    width: 50%;
+}
