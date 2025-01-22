@@ -53,12 +53,14 @@
 
 
 
-.pd-product-color-btns {
+.pd-product-color-select {
     margin: 10px 0;
 }
 
-.pd-product-color-btns p {
-    font-size: 14px;
+
+.pd-product-color-select select {
+    width: 100%;
+    padding: 10px 5px;
 }
 
 .pd-product-color-btns .btn {

@@ -31,6 +31,7 @@ function App() {
           toggleCart={toggleCart}
           cartItems={cartItems}
           removeFromCart={removeFromCart}
+          addToCart={addToCart}
         />
       </BrowserRouter>
     </>

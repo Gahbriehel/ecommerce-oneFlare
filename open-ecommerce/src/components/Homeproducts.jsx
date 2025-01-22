@@ -33,84 +33,84 @@ const homeProducts = [
         "name": "Lorem ipsum dolor sit amet consectetur.",
         "oldPrice": 48000.00,
         "price": 31000.00,
-        "image": "/images/frame-10.png"
+        "image": "/images/frame-20.png"
     },
     {
         "id": 6,
         "name": "Lorem ipsum dolor sit amet consectetur.",
         "oldPrice": 48000.00,
         "price": 31000.00,
-        "image": "/images/frame-10.png"
+        "image": "/images/frame-20.png"
     },
     {
         "id": 7,
         "name": "Lorem ipsum dolor sit amet consectetur.",
         "oldPrice": 48000.00,
         "price": 31000.00,
-        "image": "/images/frame-10.png"
+        "image": "/images/frame-20.png"
     },
     {
         "id": 8,
         "name": "Lorem ipsum dolor sit amet consectetur.",
         "oldPrice": 48000.00,
         "price": 31000.00,
-        "image": "/images/frame-10.png"
+        "image": "/images/frame-20.png"
     },
     {
         "id": 9,
         "name": "Lorem ipsum dolor sit amet consectetur.",
         "oldPrice": 48000.00,
         "price": 31000.00,
-        "image": "/images/frame-10.png"
+        "image": "/images/frame-30.png"
     },
     {
         "id": 10,
         "name": "Lorem ipsum dolor sit amet consectetur.",
         "oldPrice": 48000.00,
         "price": 31000.00,
-        "image": "/images/frame-10.png"
+        "image": "/images/frame-30.png"
     },
     {
         "id": 11,
         "name": "Lorem ipsum dolor sit amet consectetur.",
         "oldPrice": 48000.00,
         "price": 31000.00,
-        "image": "/images/frame-10.png"
+        "image": "/images/frame-30.png"
     },
     {
         "id": 12,
         "name": "Lorem ipsum dolor sit amet consectetur.",
         "oldPrice": 48000.00,
         "price": 31000.00,
-        "image": "/images/frame-10.png"
+        "image": "/images/frame-30.png"
     },
     {
         "id": 13,
         "name": "Lorem ipsum dolor sit amet consectetur.",
         "oldPrice": 48000.00,
         "price": 31000.00,
-        "image": "/images/frame-10.png"
+        "image": "/images/frame-40.png"
     },
     {
         "id": 14,
         "name": "Lorem ipsum dolor sit amet consectetur.",
         "oldPrice": 48000.00,
         "price": 31000.00,
-        "image": "/images/frame-10.png"
+        "image": "/images/frame-40.png"
     },
     {
         "id": 15,
         "name": "Lorem ipsum dolor sit amet consectetur.",
         "oldPrice": 48000.00,
         "price": 31000.00,
-        "image": "/images/frame-10.png"
+        "image": "/images/frame-40.png"
     },
     {
         "id": 16,
         "name": "Lorem ipsum dolor sit amet consectetur.",
         "oldPrice": 48000.00,
         "price": 31000.00,
-        "image": "/images/frame-10.png"
+        "image": "/images/frame-40.png"
     },
     {
         "id": 17,

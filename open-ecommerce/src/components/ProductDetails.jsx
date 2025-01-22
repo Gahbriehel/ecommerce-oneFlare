@@ -10,7 +10,7 @@ import QuantityCounter from './QuantityCounter';
 
 
 
-const ProductDetails = () => {
+const ProductDetails = ({ addToCart }) => {
     const location = useLocation()
     const { product, products } = location.state;
     const [showCheckout, setShowCheckout] = useState(false);
@@ -36,16 +36,20 @@ const ProductDetails = () => {
                         <p className="pd-price">₦ {new Intl.NumberFormat('en-us').format(product.price)}</p>
                         <button className='pd-sale-btn'>Sale</button>
                     </div>
-                    <div className='pd-product-color-btns'>
-                        <p>Colour</p>
-                        <button className='btn brown'>Brown</button>
-                        <button className='btn coffee'>Coffee</button>
-                        <button className='btn black'>Black</button>
-                        <button className='btn off-white'>Off white</button>
+                    <div className='pd-product-color-select'>
+                        <p><strong>Colour:</strong></p>
+                        <select name="item-color" id="item-color">
+                            <option disabled>Choose item color</option>
+                            <option value="">Brown</option>
+                            <option value="">Black</option>
+                            <option value="">White</option>
+                            <option value="">Blue</option>
+                        </select>
+
                     </div>
                     <p className='quantity-text'>Quantity</p>
                     <QuantityCounter />
-                    <button className='action-btns pd-btn'>Add to cart</button>
+                    <button className='action-btns pd-btn' onClick={addToCart}>Add to cart</button>
                     <br />
                     <button className='action-btns buy-btn' onClick={handleBuyBtnClick}>Buy it now</button>
                     <br />

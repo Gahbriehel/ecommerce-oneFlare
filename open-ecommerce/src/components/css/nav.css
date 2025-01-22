@@ -4,6 +4,7 @@
     display: flex;
     justify-content: space-between;
     padding: 50px 70px;
+    align-items: center;
     /* top: 0;
     left: 0;
     position: fixed;
@@ -20,7 +21,6 @@
 .nav-container .nav-left ul {
     display: flex;
     align-items: center;
-    /* justify-content: space-around left; */
 
 }
 
@@ -28,7 +28,10 @@
     list-style: none;
     margin-right: 10rem;
     text-transform: uppercase;
+}
 
+.logo {
+    font-weight: 700;
 }
 
 .nav-container .nav-left ul li .nav-link {
@@ -38,16 +41,39 @@
 }
 
 .nav-container .nav-right {
-    /* width: 20%; */
     display: flex;
     align-items: center;
 }
 
-.nav-container .nav-right span {
-    margin-left: 5rem;
-font-size: 21px;
-cursor: pointer;
+.nav-container .nav-right .search {
+   margin-right: 40px;
 }
+
+.search-container {
+    position: relative;
+}
+
+.search-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.search-input {
+    padding: 12px 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--primary-gray-color);    
+}
+
+.search-container input::placeholder {
+    color: var(--primary-text-color);
+    font-size: 14px;
+}
+
 
 .nav-container .nav-left ul li .link-active {
     color: var(--primary-blue-color);
