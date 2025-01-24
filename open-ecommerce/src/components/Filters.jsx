@@ -112,14 +112,14 @@ const Filters = () => {
                                 }
                             </div>
                             <div className="filter-input">
-                                <button onClick={handleShowAlphabetFilter} className="category-btn">Alphabetically A - Z<span><MdKeyboardArrowDown /></span></button>
+                                <button onClick={handleShowAlphabetFilter} className="alpha-category-btn">Alphabetically A - Z<span><MdKeyboardArrowDown /></span></button>
                                 {
                                     openAlphabetFilter && (
                                         <div className="alphabet-container">
-                                            <div className="category-input">
+                                            <div className="alpha-category-input">
                                                 <span>Alphabetically from A-Z</span>
                                             </div>
-                                            <div className="category-input">
+                                            <div className="alpha-category-input">
                                                 <span>Alphabetically from Z-A</span>
                                             </div>
                                         </div>

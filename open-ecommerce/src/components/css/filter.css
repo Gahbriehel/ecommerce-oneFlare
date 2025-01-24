@@ -135,4 +135,23 @@
     margin: 5px 0;
 }
 
+.filter-input .alpha-category-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+    border: 1px solid var(--ash-border-color);
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: var(--white-text-color);
+    font-size: 16px;
+    color: var(--primary-text-color);
+
+}
+
+.alpha-category-input {
+    padding: 5px 10px;
+    border: 1px solid var(--primary-blue-color);
+    margin: 5px 0;
+}
 
