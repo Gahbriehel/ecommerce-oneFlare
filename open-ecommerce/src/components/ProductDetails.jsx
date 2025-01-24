@@ -2,10 +2,12 @@ import './css/productDetails.css'
 import { Link, useLocation } from 'react-router-dom'
 import { FiShare } from "react-icons/fi";
 import Footer from './Country';
-import Socials from './Socials';
+// import Socials from './Socials';
 import { useState } from 'react';
 import { FaRegTrashAlt, FaArrowLeft } from "react-icons/fa";
 import QuantityCounter from './QuantityCounter';
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+
 
 
 
@@ -26,34 +28,49 @@ const ProductDetails = ({ addToCart }) => {
     return (
         <div className='pd-product-container'>
             <div className='pd-product-details'>
-                <div className='pd-product-image'>
-                    <img src={product.image} alt='product-image' />
-                </div>
-                <div className='pd-product-info'>
-                    <h2>{product.name}</h2>
-                    <div className='pd-prices'>
-                        <p className="pd-old-price">₦ {new Intl.NumberFormat('en-us').format(product.oldPrice)} </p>
-                        <p className="pd-price">₦ {new Intl.NumberFormat('en-us').format(product.price)}</p>
-                        <button className='pd-sale-btn'>Sale</button>
+                <div className="details-div">
+                    <div className='pd-product-image'>
+                        <img src={product.image} alt='product-image' />
                     </div>
-                    <div className='pd-product-color-select'>
-                        <p><strong>Colour:</strong></p>
-                        <select name="item-color" id="item-color">
-                            <option disabled>Choose item color</option>
-                            <option value="">Brown</option>
-                            <option value="">Black</option>
-                            <option value="">White</option>
-                            <option value="">Blue</option>
-                        </select>
+                    <div className='pd-product-info'>
+                        <div className="pd-product-info-top">
+                            <div className="pd-product-info-top-name">
+                                <h2>{product.name}</h2>
+                            </div>
+                            <div className="pd-product-info-top-btns">
+                                <FiShare />
+                                <div className="arrows">
+                                    <IoIosArrowBack />
+                                    <IoIosArrowForward />
+                                </div>
+                            </div>
 
+                        </div>
+                        <div className='pd-prices'>
+                            <p className="pd-old-price">₦{new Intl.NumberFormat('en-us').format(product.oldPrice)} </p>
+                            <p className="pd-price">₦{new Intl.NumberFormat('en-us').format(product.price)}</p>
+                            <p className='pd-in-stock'>In stock</p>
+                        </div>
+                        <div className='pd-product-color-select'>
+                            <p className='pd-category-text'>Category: {product.category}</p>
+                            <p>Sub-Category:</p>
+                            {/* <p><strong>Colour:</strong></p> */}
+                            <select name="item-color" id="item-color">
+                                <option disabled>Choose item color</option>
+                                <option value="">Brown</option>
+                                <option value="">Black</option>
+                                <option value="">White</option>
+                                <option value="">Blue</option>
+                            </select>
+                            <p className='pd-barcode'>SKU: {product.barcode}</p>
+                        </div>
+                        <p className='quantity-text'>Quantity</p>
+                        <QuantityCounter />
+                        <button className='action-btns pd-btn' onClick={() => addToCart(product)}>Add to cart</button>
+                        <br />
+                        <button className='action-btns buy-btn' onClick={handleBuyBtnClick}>Buy it now</button>
+                        <br />
                     </div>
-                    <p className='quantity-text'>Quantity</p>
-                    <QuantityCounter />
-                    <button className='action-btns pd-btn' onClick={addToCart}>Add to cart</button>
-                    <br />
-                    <button className='action-btns buy-btn' onClick={handleBuyBtnClick}>Buy it now</button>
-                    <br />
-                    <button className='share-btn'><FiShare /> Share</button>
                 </div>
                 {
                     showCheckout && (
@@ -70,13 +87,14 @@ const ProductDetails = ({ addToCart }) => {
                                     <div className='checkout-product-info'>
                                         <h3>{product.name}</h3>
                                         <div className='checkout-prices'>
-                                            <p className="checkout-old-price">₦ {new Intl.NumberFormat('en-us').format(product.oldPrice)} </p>
-                                            <p className="checkout-price">₦ {new Intl.NumberFormat('en-us').format(product.price)}</p>
-                                            <button className='checkout-sale-btn'>Sale</button>
+                                            <p className="checkout-old-price">₦{new Intl.NumberFormat('en-us').format(product.oldPrice)} </p>
+                                            <p className="checkout-price">₦{new Intl.NumberFormat('en-us').format(product.price)}</p>
+                                            <p className='pd-in-stock1'>In stock</p>
                                         </div>
+                                        <p style={{ margin: "10px" }}>Color</p>
                                         <div className='quantity-container'>
                                             <QuantityCounter />
-                                            <button><FaRegTrashAlt /></button>
+                                            <button className='del-btn'><FaRegTrashAlt className='del-btn' /></button>
                                         </div>
                                     </div>
                                 </div>
@@ -91,7 +109,7 @@ const ProductDetails = ({ addToCart }) => {
                                         </div>
                                         <div className='complete-checkout'>
                                             <p>Taxes and shipping will be calculated at checkout</p>
-                                            <Link to='/checkout'><button className='action-btns checkout' >Checkout</button></Link>
+                                            <Link to='/checkout'><button className='action-btns checkout'>Checkout</button></Link>
                                         </div>
                                     </div>
                                 </div>
@@ -124,7 +142,7 @@ const ProductDetails = ({ addToCart }) => {
                 </div>
             </div>
             <Footer />
-            <Socials />
+            {/* <Socials /> */}
         </div>
     )
 }

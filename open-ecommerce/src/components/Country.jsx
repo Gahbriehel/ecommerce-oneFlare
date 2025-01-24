@@ -43,6 +43,7 @@ const Country = ({ className }) => {
                     ))}
                 </select>
             </div>
+            <p>&copy; Name of company. All rights reserved .Powered by OneflareTech Solutions</p>
 
         </div>
     )

@@ -1,6 +1,6 @@
 .checkout-page-container {
     display: flex;
-    width: 100%;
+    max-width: 100%;
     padding: 40px 100px;
 }
 

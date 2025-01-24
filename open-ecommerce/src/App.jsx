@@ -14,6 +14,7 @@ function App() {
   }
 
   const addToCart = (product) => {
+    console.log("Adding to cart", product)
     setCartItems((prevItems) => [...prevItems, product]);
   }
 

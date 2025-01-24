@@ -1,7 +1,7 @@
 @import 'root.css';
 
 .contact-container {
-    width: 100%;
+    max-width: 100%;
     padding: 40px 100px;
 
 }

@@ -1,13 +1,16 @@
 :root {
     --primary-text-color: #000000;
     --white-text-color: #ffffff;
+    --grey-text-color: #555556;
     --primary-gray-color: #E8EAEB;
 
     --primary-blue-color: #1877F2;
+    --primary-blue-color-hover: #0e5ec5;
 
     /* Border colors */
     --gray-border-color: #808080;
-    
+    --ash-border-color: #B0B2B2;
+
 
     /* Button colors */
     --brown-btn-color: #5F3905;
@@ -15,11 +18,4 @@
     --black-btn-color: #000000;
     --off-white-btn-color: #EDEBE9;
     --purple-btn-color: #5153E7;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-    box-sizing: border-box;
 }

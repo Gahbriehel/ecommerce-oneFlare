@@ -6,13 +6,13 @@ import Contact from '../components/Contact'
 import Checkout from '../components/Checkout'
 
 
-const Rout = () => {
+const Rout = ({ addToCart }) => {
   return (
     <>
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/checkout' element={<Checkout />} />
-        <Route path='/product/:id' element={<ProductDetails />} />
+        <Route path='/product/:id' element={<ProductDetails addToCart={addToCart} />} />
         <Route path='/contact' element={<Contact />} />
       </Routes>
     </>

@@ -1,0 +1,138 @@
+.products-section {
+    padding: 0 40px;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.products-section h1 {
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.home-container .products-form {
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+.home-container .products-form form {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Filters */
+
+/* .filter-container {
+    display: flex;
+    width: 40%;
+    justify-content: space-between;
+}
+
+.sortBy-container {
+    display: flex;
+    width: 40%;
+    justify-content: space-evenly;
+} 
+0*/
+
+.filter-container {
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-between;
+    width: 100%;
+}
+
+.filter-section {
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    text-align: left;
+}
+
+.filter-section-text {
+    margin-right: 10px;
+}
+
+.filter-input {
+    margin: 0 20px;
+    text-align: left;
+}
+
+.filter-input .availability-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 40px;
+    border: 1px solid var(--ash-border-color);
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: var(--white-text-color);
+    font-size: 16px;
+    color: var(--primary-text-color);
+}
+
+.availability-input {
+    font-size: 14px;
+    padding: 6px 3px;
+    border: 1px solid var(--primary-blue-color);
+    margin: 5px 0;
+} 
+
+.arrow-icon {
+    font-size: 18px;
+    margin-left: auto;
+}
+
+.filter-input .range-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 50px;
+    border: 1px solid var(--ash-border-color);
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: var(--white-text-color);
+    font-size: 16px;
+    color: var(--primary-text-color);
+
+}
+
+.price-range-container {
+    border: 1px solid var(--primary-blue-color);
+}
+
+.range-input {
+    padding: 5px 5px;
+    margin: 5px 0;
+    width: 100%;
+    border-left: 0;
+    border-right: 0;
+
+}
+
+.range-input input {
+    padding: 5px 5px;
+    width: 120px;
+}
+
+
+.filter-input .category-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 50px;
+    border: 1px solid var(--ash-border-color);
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: var(--white-text-color);
+    font-size: 16px;
+    color: var(--primary-text-color);
+
+}
+
+.category-input {
+    padding: 5px 10px;
+    border: 1px solid var(--primary-blue-color);
+    margin: 5px 0;
+}
+
+

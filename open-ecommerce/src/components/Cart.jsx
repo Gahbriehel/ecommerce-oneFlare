@@ -43,7 +43,7 @@ const Cart = ({ isOpen, toggleCart, cartItems, removeFromCart }) => {
                 )}
             </div>
             <div className="cart-footer">
-                <p>Total: ₦ {new Intl.NumberFormat('en-us').format(cartItems.reduce((total, item) => total + item.price, 0))}</p>
+                <p>Total: ₦{new Intl.NumberFormat('en-us').format(cartItems.reduce((total, item) => total + item.price, 0))}</p>
                 <button className="action-btns checkout">Checkout</button>
             </div>
         </div>

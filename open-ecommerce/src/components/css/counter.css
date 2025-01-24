@@ -1,16 +1,24 @@
 @import 'root.css';
 
 .counter {
-    width: 160px;
-    height: 40px;
-    border: .5px solid var(--gray-border-color);
+    width: 200px;
     align-items: center;
     display: flex;
     justify-content: space-evenly;
-    margin-top: 10px;
+    margin: 10px 0;
 }
 
 .counter button {
-    border: none;
     cursor: pointer;
+    border-radius: 50%;
+    background-color: var(--white-text-color);
+    border: .1px solid var(--gray-border-color);
+    margin: 0;
+    padding: 10px 10px;
+}
+
+.counter span {
+    background-color: var(--white-text-color);
+    border: .1px solid var(--gray-border-color);
+    padding: 6px 12px;
 }

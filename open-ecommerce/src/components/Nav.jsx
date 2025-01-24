@@ -12,9 +12,9 @@ const Nav = ({ toggleCart, cartItemsCount }) => {
             <div className="nav-container">
                 <div className="nav-left">
                     <ul>
-                        <li><Link to="/" className="nav-link logo">logo</Link></li>
-                        <li><Link to="/" className="nav-link">home</Link></li>
-                        <li><Link to="/contact" className={currentPage === '/contact' ? 'link-active nav-link' : 'nav-link'}>contact</Link></li>
+                        <li><Link to="/" className="nav-link logo"><img src="/images/logo.png" /></Link></li>
+                        <li><Link to="/" className="nav-link"><strong>Slack Market and Shops</strong></Link></li>
+                        {/* <li><Link to="/contact" className={currentPage === '/contact' ? 'link-active nav-link' : 'nav-link'}>contact</Link></li> */}
                         <li><Link to="/" className={currentPage === '/' ? 'nav-link link-active' : 'nav-link'}>shop</Link></li>
                     </ul>
                 </div>
@@ -27,8 +27,8 @@ const Nav = ({ toggleCart, cartItemsCount }) => {
 
                     </div>
                     <span onClick={toggleCart} className="cart-icon">
-                        <TbShoppingBag />
-                        {cartItemsCount > 0 && <span className="cart-count">{cartItemsCount}</span>}
+                        {cartItemsCount > 0 && <p><TbShoppingBag /><sup className="cart-count">{cartItemsCount}</sup></p>}
+                        {/* {cartItemsCount > 0 && <sup className="cart-count">{cartItemsCount}</sup>} */}
                     </span>
                 </div>
             </div >

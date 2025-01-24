@@ -3,7 +3,6 @@ import Footer from "./Country";
 import { useState } from "react";
 import homeProducts from "./Homeproducts";
 import { Link } from "react-router-dom";
-import Socials from "./Socials";
 import Filters from './Filters';
 
 const Home = () => {
@@ -27,9 +26,10 @@ const Home = () => {
                                                 <Link to={`/product/${product.id}`} state={{ product, products }}><img src={product.image} alt="product" className="product-image"></img></Link>
                                             </div>
                                             <div className="product-info">
-                                                <p>{product.name}</p>
-                                                <p className="old-price">₦ {new Intl.NumberFormat('en-us').format(product.oldPrice)}</p>
-                                                <p className="price">₦ {new Intl.NumberFormat('en-us').format(product.price)}</p>
+                                                <Link className='category-link'><p className='product-category-p'>{product.category}</p></Link>
+                                                <p className='product-name-p'>{product.name}</p>
+                                                <p className="old-price">₦{new Intl.NumberFormat('en-us').format(product.oldPrice)}</p>
+                                                <p className="price">₦{new Intl.NumberFormat('en-us').format(product.price)}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -41,7 +41,7 @@ const Home = () => {
             </div>
             <hr />
             <Footer />
-            <Socials />
+            {/* <Socials /> */}
         </div>
     )
 }
