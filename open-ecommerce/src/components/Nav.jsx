@@ -27,8 +27,8 @@ const Nav = ({ toggleCart, cartItemsCount }) => {
 
                     </div>
                     <span onClick={toggleCart} className="cart-icon">
-                        {cartItemsCount > 0 && <p><TbShoppingBag /><sup className="cart-count">{cartItemsCount}</sup></p>}
-                        {/* {cartItemsCount > 0 && <sup className="cart-count">{cartItemsCount}</sup>} */}
+                        <p><TbShoppingBag /></p>
+                        {cartItemsCount > 0 && <sup className="cart-count">{cartItemsCount}</sup>}
                     </span>
                 </div>
             </div >

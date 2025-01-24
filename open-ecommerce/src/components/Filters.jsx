@@ -40,7 +40,7 @@ const Filters = () => {
                         </div>
                         <div className="filter-section">
                             <div className="filter-section-text">
-                                <p><strong>Filter :</strong></p>
+                                <p><strong>Filter:</strong></p>
                             </div>
                             <div className="filter-input">
                                 <button onClick={handleShowAvailability} className="availability-btn">

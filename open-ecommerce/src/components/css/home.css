@@ -96,27 +96,26 @@ padding: 10px 10px;
 
 
 /* Media queries */
-    /* @media (max-width: 1700px) {
+    @media (max-width: 1700px) {
         .box {
-            width: 320px;
-            height: 300px;
+            width: 280px;
         }
-    } */
-
-/* @media (max-width: 1400px) {
-    .box {
-        width: 250px;
-        height: 230px;
-        margin-top: 50px;
-        margin-left: 60px;
     }
 
-    .box .image-box img {
+@media (max-width: 1400px) {
+    .box {
+        width: 250px;
+        /* height: 230px; */
+        /* margin-top: 50px; */
+        /* margin-left: 60px; */
+    }
+
+    /* .box .image-box img {
         object-fit: cover;
         width: 100%;
         height: 120px;
         justify-content: center;
         transition: transform 0.2s ease-in-out;
-    }
+    } */
     
-} */
+}
