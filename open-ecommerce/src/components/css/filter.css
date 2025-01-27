@@ -92,7 +92,7 @@
     max-width: 100px;
 }
 
-/* Media Queries for Responsiveness */
+/* Media Queries */
 @media (max-width: 768px) {
     .products-section {
         padding: 0 20px;

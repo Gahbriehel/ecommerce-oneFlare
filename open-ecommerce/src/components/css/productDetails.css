@@ -219,22 +219,22 @@
     overflow-y: auto;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Space between header and actions */
+    justify-content: space-between; 
 }
 
 .checkout-header {
     display: flex;
     align-items: center;
-    justify-content: center; /* Center the content horizontally */
+    justify-content: center; 
     padding: 20px;
     background-color: var(--primary-blue-color);
     color: white;
-    position: relative; /* For positioning the back button */
+    position: relative; 
 }
 
 .checkout-header h2 {
     margin: 0;
-    text-align: center; /* Center the text */
+    text-align: center; 
 }
 
 .checkout-header button {
@@ -248,10 +248,10 @@
 }
 
 .buy-it-now-container {
-    flex: 1; /* Take up remaining space */
+    flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Space between product details and actions */
+    justify-content: space-between; 
     padding: 20px;
 }
 

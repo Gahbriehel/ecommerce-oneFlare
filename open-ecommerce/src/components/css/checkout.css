@@ -126,7 +126,7 @@
     cursor: pointer;
 }
 
-/* Responsive Adjustments */
+/* Media Queries */
 @media (min-width: 768px) {
     .checkout-contact {
         width: 65%;

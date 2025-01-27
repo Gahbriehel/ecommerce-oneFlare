@@ -6,11 +6,11 @@
     align-items: center;
     padding: 40px 40px;
     max-width: 100%;
-    background-color: white; /* Add background color for better visibility */
-    position: sticky; /* Make the nav sticky */
-    top: 0; /* Stick to the top of the viewport */
-    z-index: 1000; /* Ensure the nav is above other content */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for better visibility */
+    background-color: white; 
+    position: sticky; 
+    top: 0; 
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
 
 .nav-left {
@@ -88,7 +88,7 @@
     font-size: 12px;
 }
 
-/* Media Queries for Responsiveness */
+/* Media Queries */
 @media (max-width: 1200px) {
     .nav-left ul li {
         margin-right: 5rem;
