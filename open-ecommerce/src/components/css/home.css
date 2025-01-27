@@ -1,32 +1,24 @@
-@import 'root.css';
-
 .home-container {
     padding: 20px 0;
     max-width: 100%;
-    /* background-color: red; */
 }
 
-
 .main-section {
-    width: 1400px;
+    max-width: 1400px; /* Limit the maximum width for larger screens */
     margin: 0 auto;
     padding-bottom: 40px;
 }
 
-/* Products/Main */
-
 .products {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns for larger screens */
+    gap: 20px; /* Space between items */
     margin-top: 40px;
-    justify-content: center;
+    padding: 0 20px; /* Add padding to prevent overflow */
 }
 
 .box {
-    width: 300px;
     height: 350px;
-    margin-top: 20px;
-    margin-left: 30px;
     background-color: var(--border-color);
     overflow: hidden;
     border: 1px solid var(--nav-bg-color-dark);
@@ -37,22 +29,16 @@
     border-radius: 8px;
 }
 
-.box .image-box img {
-    object-fit: cover;
-    width: 100%;
-    height: 200px;
-    justify-content: center;
-    padding: 0 5px;
-    transition: transform 0.2s ease-in-out;
-}
-
-
 .image-box {
     overflow: hidden;
     position: relative;
+    height: 200px;
 }
 
 .product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     transition: transform 0.3s ease;
 }
 
@@ -61,7 +47,7 @@
 }
 
 .product-info {
-padding: 10px 10px;
+    padding: 10px;
 }
 
 .product-info p {
@@ -76,46 +62,32 @@ padding: 10px 10px;
 
 .category-link {
     text-decoration: none;
-
 }
-
-
 
 .old-price {
     text-decoration: line-through;
     font-size: 14px;
 }
 
+/* Media Queries for Responsiveness */
 
-
-
-
-
-
-
-
-
-/* Media queries */
-    @media (max-width: 1700px) {
-        .box {
-            width: 280px;
-        }
+/* For tablets and smaller desktops (e.g., 1200px and below) */
+@media (max-width: 1200px) {
+    .products {
+        grid-template-columns: repeat(4, 1fr); /* 3 columns */
     }
+}
 
-@media (max-width: 1400px) {
-    .box {
-        width: 250px;
-        /* height: 230px; */
-        /* margin-top: 50px; */
-        /* margin-left: 60px; */
+/* For smaller tablets (e.g., 768px and below) */
+@media (max-width: 768px) {
+    .products {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns */
     }
+}
 
-    /* .box .image-box img {
-        object-fit: cover;
-        width: 100%;
-        height: 120px;
-        justify-content: center;
-        transition: transform 0.2s ease-in-out;
-    } */
-    
+/* For mobile devices (e.g., 480px and below) */
+@media (max-width: 480px) {
+    .products {
+        grid-template-columns: 1fr; /* 1 column (stacked) */
+    }
 }

@@ -1,16 +1,20 @@
 .checkout-page-container {
     display: flex;
+    flex-wrap: wrap;
     max-width: 100%;
-    padding: 40px 100px;
+    padding: 40px 20px;
+    gap: 20px;
 }
 
-.checkout-contact {
-    width: 50%;
+.checkout-contact,
+.checkout-right {
+    width: 100%;
+    flex: 1;
 }
 
 .checkout-right {
     background-color: var(--off-white-btn-color);
-    margin-left: 20px;
+    padding: 20px;
 }
 
 .form-container {
@@ -22,32 +26,35 @@
     font-weight: 500;
 }
 
-.form-container input[type="text"], .custom-tip input {
+.form-container input[type="text"],
+.custom-tip input {
     width: 100%;
     padding: 12px 10px;
     margin: 10px 0;
+    box-sizing: border-box;
 }
 
 .form-container input[type="radio"] {
     margin-right: 5px;
 }
 
-.form-container input::placeholder, .custom-tip input::placeholder {
+.form-container input::placeholder,
+.custom-tip input::placeholder {
     font-size: 16px;
 }
 
-.form-container .name-div {
+.form-container .name-div,
+.form-container .address-div {
     display: grid;
-    grid-template-columns: 45% 45%;
-    justify-content: space-between;
-    margin: 15px 0;
+    gap: 15px;
+}
+
+.form-container .name-div {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
 .form-container .address-div {
-    display: grid;
-    grid-template-columns: 30% 30% 30%;
-    justify-content: space-between;
-    margin: 15px 0 0 0;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
 
 .form-container .billing-options .billing-option {
@@ -55,13 +62,12 @@
     padding: 20px;
     margin: 8px 0;
     font-size: 19px;
-    width: 50%;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-/* Tip section */
-
 .tip-section {
-    width: 100%;
+    margin-top: 20px;
 }
 
 .tip-section h2 {
@@ -69,25 +75,27 @@
 }
 
 .tip-section .tip-buttons {
-    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
 }
 
-.tip-section .tip-buttons  button {
-    padding: 20px 30px;
+.tip-section .tip-buttons button {
+    padding: 10px 20px;
     background-color: var(--white-text-color);
     border: 1px solid var(--gray-border-color);
-    margin: 25px;
     cursor: pointer;
+    flex: 1;
+    min-width: 80px;
 }
 
 .tip-section p {
     margin-top: 10px;
 }
 
-/* Payment section */
-
 .payment-section {
-    width: 100%;
+    margin-top: 20px;
 }
 
 .payment-section h2 {
@@ -97,19 +105,57 @@
 .payment-section .payment-logos {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
-.payment-section .payment-logos .payment-logo-right img {
-    margin: 0 20px;
+.payment-section .payment-logos img {
+    max-height: 50px;
+    width: auto;
 }
 
 .payment-section button {
-    background-color: var(--purple-btn-color);
-    border: none;
-    border: 1px solid var(--gray-border-color);
+    background-color: var(--primary-blue-color);
     color: var(--white-text-color);
-    padding: 10px 10px;
+    padding: 15px;
+    border: none;
     width: 100%;
     font-size: 20px;
     margin-top: 20px;
+    cursor: pointer;
+}
+
+/* Responsive Adjustments */
+@media (min-width: 768px) {
+    .checkout-contact {
+        width: 65%;
+    }
+
+    .checkout-right {
+        width: 30%;
+    }
+
+    .form-container .billing-options .billing-option {
+        width: 50%;
+    }
+
+    .tip-section .tip-buttons button {
+        padding: 20px 30px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .checkout-page-container {
+        padding: 40px 100px;
+        gap: 40px;
+    }
+
+    .payment-section .payment-logos img {
+        max-height: 70px;
+    }
+
+    .postal-code label {
+        font-size: 15px;
+    }
 }
