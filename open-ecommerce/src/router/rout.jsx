@@ -10,7 +10,7 @@ const Rout = ({ addToCart }) => {
   return (
     <>
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path='/' element={<Home addToCart={addToCart} />} />
         <Route path='/checkout' element={<Checkout />} />
         <Route path='/product/:id' element={<ProductDetails addToCart={addToCart} />} />
         <Route path='/contact' element={<Contact />} />

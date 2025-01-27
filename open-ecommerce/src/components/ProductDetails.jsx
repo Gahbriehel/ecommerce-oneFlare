@@ -10,6 +10,7 @@ import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 const ProductDetails = ({ addToCart }) => {
     const location = useLocation();
     const { product, products } = location.state;
+
     const [showCheckout, setShowCheckout] = useState(false);
     const moreProductsRef = useRef(null);
 

@@ -8,16 +8,13 @@ function App() {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [cartItems, setCartItems] = useState([]);
 
-  // Toggle the cart visibility
   const toggleCart = () => {
     setIsCartOpen((prev) => !prev);
   };
 
-  // Add a product to the cart if it doesn't already exist
   const addToCart = (product) => {
-    console.log('Attempting to add to cart:', product);
+    console.log('Adding item to cart:', product);
 
-    // Check if the product already exists in the cart
     const exists = cartItems.some((item) => item.id === product.id);
 
     if (!exists) {
@@ -27,7 +24,6 @@ function App() {
     }
   };
 
-  // Remove a product from the cart by ID
   const removeFromCart = (id) => {
     setCartItems((prevItems) => prevItems.filter((item) => item.id !== id));
   };

@@ -2,11 +2,11 @@ import './css/home.css'
 import Footer from "./Country";
 import { useState } from "react";
 import homeProducts from "./Homeproducts";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Filters from './Filters';
+import { TbShoppingBag } from "react-icons/tb";
 
-const Home = () => {
-
+const Home = ({ addToCart }) => {
     const [products, setProducts] = useState(homeProducts)
     console.log(setProducts)
 
@@ -30,6 +30,9 @@ const Home = () => {
                                                 <p className='product-name-p'>{product.name}</p>
                                                 <p className="old-price">₦{new Intl.NumberFormat('en-us').format(product.oldPrice)}</p>
                                                 <p className="price">₦{new Intl.NumberFormat('en-us').format(product.price)}</p>
+                                                <button onClick={() => addToCart(product)}><TbShoppingBag />
+                                                    <span className="add-to-cart-text">Add to Cart</span>
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
