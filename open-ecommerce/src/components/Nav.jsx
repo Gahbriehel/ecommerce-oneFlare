@@ -17,7 +17,7 @@ const Nav = ({ toggleCart, cartItemsCount }) => {
                             </Link>
                         </li>
                         <li>
-                            <Link to="/" className="nav-link">
+                            <Link to="/" className="nav-link business-name">
                                 <strong>Slack Market and Shops</strong>
                             </Link>
                         </li>

@@ -97,6 +97,11 @@
     .search-input {
         width: 150px;
     }
+
+    .business-name {
+        font-size: 14px;
+    }
+    
 }
 
 @media (max-width: 768px) {
@@ -111,6 +116,8 @@
     .search-input {
         width: 120px;
     }
+
+   
 }
 
 @media (max-width: 480px) {
