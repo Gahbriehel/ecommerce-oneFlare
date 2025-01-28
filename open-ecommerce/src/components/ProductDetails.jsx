@@ -11,6 +11,14 @@ const ProductDetails = ({ addToCart }) => {
     const location = useLocation();
     const { product, products } = location.state;
 
+    const [mainImage, setMainImage] = useState(product.image)
+
+    const handleMainImageChange = (image) => {
+        console.log(`image ${image} has been clicked`);
+
+        setMainImage(image);
+    }
+
     const [showCheckout, setShowCheckout] = useState(false);
     const moreProductsRef = useRef(null);
 
@@ -39,7 +47,36 @@ const ProductDetails = ({ addToCart }) => {
             <div className='pd-product-details'>
                 <div className="details-div">
                     <div className='pd-product-image'>
-                        <img src={product.image} alt='product-image' />
+                        <div className="pd-product-image-main">
+                            <img src={mainImage} alt='product-image' />
+                        </div>
+                        {product.images && (
+                            <div className="extra-images">
+                                {product.images.extra1 &&
+                                    <img
+                                        src={product.images.extra1}
+                                        alt="image"
+                                        onClick={() => handleMainImageChange(product.images.extra1)}
+                                    />}
+                                {product.images.extra2 &&
+                                    <img
+                                        src={product.images.extra2}
+                                        alt="image"
+                                        onClick={() => handleMainImageChange(product.images.extra2)}
+                                    />}
+                                {product.images.extra3 &&
+                                    <img
+                                        src={product.images.extra3}
+                                        alt="image"
+                                        onClick={() => handleMainImageChange(product.images.extra3)}
+                                    />}
+                                {product.images.extra4 &&
+                                    <img
+                                        src={product.images.extra4}
+                                        alt="image"
+                                        onClick={() => handleMainImageChange(product.images.extra4)}
+                                    />}
+                            </div>)}
                     </div>
                     <div className='pd-product-info'>
                         <div className="pd-product-info-top">
