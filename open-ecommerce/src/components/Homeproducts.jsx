@@ -3,7 +3,7 @@ const homeProducts = [
         "id": 1,
         "name": "Lorem ipsum.",
         "oldPrice": 48000.00,
-        "price": 31000.00,
+        "price": 11000.00,
         "image": "/images/extra/extra9.jpeg",
         "category": "Bags",
         "images": {
@@ -11,14 +11,14 @@ const homeProducts = [
             "extra2": "/images/extra/extra1.png",
             "extra3": "/images/extra/extra2.png",
             "extra4": "/images/extra/extra9.jpeg"
-        }
+        },
     },
 
     {
         "id": 2,
         "name": "Lorem ipsum dolor.",
         "oldPrice": 48000.00,
-        "price": 31000.00,
+        "price": 41000.00,
         "image": "/images/frame-10.png",
         "category": "Bags",
         "images": {
@@ -32,7 +32,7 @@ const homeProducts = [
         "id": 3,
         "name": "Lorem ipsum dolor sit amet consectetur.",
         "oldPrice": 48000.00,
-        "price": 31000.00,
+        "price": 3000.00,
         "image": "/images/frame-10.png",
         "category": "Shoes",
         "images": {
@@ -45,7 +45,7 @@ const homeProducts = [
     {
         "id": 4,
         "name": "Lorem ipsum dolor sit amet consectetur.",
-        "oldPrice": 48000.00,
+        "oldPrice": 15000.00,
         "price": 31000.00,
         "image": "/images/frame-10.png",
         "category": "Bags",
@@ -59,7 +59,7 @@ const homeProducts = [
     {
         "id": 5,
         "name": "Lorem ipsum dolor sit amet consectetur.",
-        "oldPrice": 48000.00,
+        "oldPrice": 5000.00,
         "price": 31000.00,
         "image": "/images/frame-20.png",
         "category": "Bags",
