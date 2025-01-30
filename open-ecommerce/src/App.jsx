@@ -26,17 +26,28 @@ function App() {
 
   const removeFromCart = (id) => {
     setCartItems((prevItems) => prevItems.filter((item) => item.id !== id));
+    console.log(`Item ${id} is being removed from cart`);
+
+  };
+
+  const updateQuantity = (id, newQuantity) => {
+    setCartItems((prevItems) =>
+      prevItems.map((item) =>
+        item.id === id ? { ...item, quantity: newQuantity } : item
+      )
+    );
   };
 
   return (
     <BrowserRouter>
       <Nav toggleCart={toggleCart} cartItemsCount={cartItems.length} />
-      <Rout addToCart={addToCart} />
+      <Rout addToCart={addToCart} cartItems={cartItems} removeFromCart={removeFromCart} updateQuantity={updateQuantity} />
       <Cart
         isOpen={isCartOpen}
         toggleCart={toggleCart}
         cartItems={cartItems}
         removeFromCart={removeFromCart}
+        updateQuantity={updateQuantity}
       />
     </BrowserRouter>
   );
