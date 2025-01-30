@@ -1,12 +1,12 @@
 @import 'root.css';
 
-.counter {
+/* .counter {
     width: 200px;
     align-items: center;
     display: flex;
     justify-content: space-evenly;
     margin: 10px 0;
-}
+} */
 
 .counter button {
     cursor: pointer;

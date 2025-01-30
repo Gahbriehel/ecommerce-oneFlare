@@ -1,25 +1,22 @@
-import { useState } from "react";
 import { FiMinus, FiPlus } from "react-icons/fi";
 import './css/counter.css'
 
 
 
-const QuantityCounter = () => {
-
-    const [count, setCount] = useState(1);
+const QuantityCounter = ({ quantity, onUpdateQuantity }) => {
 
     const handleDecrement = () => {
-        setCount(Math.max(count - 1, 1))
+        onUpdateQuantity(Math.max(quantity - 1, 1))
     }
 
     const handleIncrement = () => {
-        setCount(count + 1)
+        onUpdateQuantity(quantity + 1)
     }
 
     return (
         <div className="counter">
             <button onClick={handleDecrement}><FiMinus /></button>
-            <span>{count}</span>
+            <span>{quantity}</span>
             <button onClick={handleIncrement}><FiPlus /></button>
         </div>
     )
