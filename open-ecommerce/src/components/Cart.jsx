@@ -5,13 +5,18 @@ import { TbShoppingBag } from "react-icons/tb";
 import { useNavigate } from "react-router-dom";
 import QuantityCounter from "./QuantityCounter";
 
-const Cart = ({ isOpen, toggleCart, cartItems, removeFromCart }) => {
+const Cart = ({ isOpen, toggleCart, cartItems, removeFromCart, updateQuantity }) => {
     const navigate = useNavigate();
 
     const navigateFromCart = () => {
         navigate("/");
         toggleCart();
     };
+
+    const navigateToCartPage = () => {
+        navigate("/cart")
+        toggleCart();
+    }
 
     const calculateSubtotal = () =>
         cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
@@ -49,7 +54,12 @@ const Cart = ({ isOpen, toggleCart, cartItems, removeFromCart }) => {
                                 <p>Quantity: {item.quantity}</p>
                                 <p>Color</p>
                                 <div className='quantity-container'>
-                                    <QuantityCounter />
+                                    <QuantityCounter
+                                        quantity={item.quantity}
+                                        onUpdateQuantity={(newQuantity) =>
+                                            updateQuantity(item.id, newQuantity)
+                                        }
+                                    />
                                     <button className='del-btn' onClick={() => removeFromCart(item.id)}><FaRegTrashAlt className='del-btn' /></button>
                                 </div>
                             </div>
@@ -69,7 +79,7 @@ const Cart = ({ isOpen, toggleCart, cartItems, removeFromCart }) => {
                             </span>
                         </div>
                         <div className="cart-actions">
-                            <button className="action-btn view-cart">View Cart</button>
+                            <button onClick={navigateToCartPage} className="action-btn view-cart">View Cart</button>
                             <br />
                             <button className="action-btn checkout">Checkout</button>
                         </div>
