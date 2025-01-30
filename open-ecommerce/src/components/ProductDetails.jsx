@@ -7,9 +7,12 @@ import { FaRegTrashAlt, FaArrowLeft } from "react-icons/fa";
 import QuantityCounter from './QuantityCounter';
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
-const ProductDetails = ({ addToCart }) => {
+const ProductDetails = ({ addToCart, cartItems, updateQuantity }) => {
     const location = useLocation();
     const { product, products } = location.state;
+
+    const cartItem = cartItems.find((item) => item.id === product.id)
+    const quantity = cartItem ? cartItem.quantity : 1;
 
     const [mainImage, setMainImage] = useState(product.image)
 
@@ -109,7 +112,12 @@ const ProductDetails = ({ addToCart }) => {
                             <p className='pd-barcode'>SKU: {product.barcode}</p>
                         </div>
                         <p className='quantity-text'>Quantity</p>
-                        <QuantityCounter />
+                        <QuantityCounter
+                            quantity={quantity}
+                            onUpdateQuantity={(newQuantity) => {
+                                updateQuantity(product.id, newQuantity)
+                            }}
+                        />
                         <button className='action-btns pd-btn' onClick={() => addToCart(product)}>Add to cart</button>
                         <br />
                         <button className='action-btns buy-btn' onClick={handleBuyBtnClick}>Buy it now</button>
@@ -136,7 +144,12 @@ const ProductDetails = ({ addToCart }) => {
                                     </div>
                                     <p style={{ margin: "10px" }}>Color</p>
                                     <div className='quantity-container'>
-                                        <QuantityCounter />
+                                        <QuantityCounter
+                                            quantity={quantity}
+                                            onUpdateQuantity={(newQuantity) => {
+                                                updateQuantity(product.id, newQuantity)
+                                            }}
+                                        />
                                         <button className='del-btn'><FaRegTrashAlt className='del-btn' /></button>
                                     </div>
                                 </div>
