@@ -126,6 +126,45 @@
     cursor: pointer;
 }
 
+
+/* Right / cart details */
+
+.item-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.item-info * {
+    margin: 5px 0;
+}
+
+.item-info img {
+    width: 150px;
+}
+
+.item-info span {
+    background-color: var(--gray-border-color);
+    color: white;
+    border-radius: 50%;
+    position: absolute;
+    padding: 2px 6px;
+    font-size: 12px;
+}
+
+.checkout-info .checkout-infos {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+}
+
+.checkout-info .total {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+
 /* Media Queries */
 @media (min-width: 768px) {
     .checkout-contact {

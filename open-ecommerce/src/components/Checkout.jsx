@@ -1,13 +1,27 @@
 import { useState } from "react";
 import './css/checkout.css'
 
-const Checkout = () => {
+const Checkout = ({ cartItems }) => {
     const [billingOption, setBillingOption] = useState("same");
-
+    // console.log("cart items", cartItems)
     const handleBillingOptionChange = (e) => {
         setBillingOption(e.target.value);
     };
 
+    const originalTaxPercent = 7.5
+
+    const calculateSubTotal = () =>
+        cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+
+    const calculateTax = (taxPercent = originalTaxPercent) => {
+        const tax = calculateSubTotal() / taxPercent;
+        return tax;
+    }
+    const calculateTotal = () => {
+        const total = calculateSubTotal() + calculateTax();
+        console.log("total:", total);
+        return total
+    }
     const tipSection = () => (
         <div className="tip-section">
             <h2>Add Tip</h2>
@@ -246,7 +260,50 @@ const Checkout = () => {
                 </form>
             </div>
             <div className="checkout-right">
-                <h3>Product information comes here</h3>
+                <h2 style={{ textAlign: 'center', fontWeight: 500, color: 'var(--primary-blue-color)' }}>Checkout items</h2>
+                <div className="checkout-cart-details">
+                    {
+                        cartItems.map((item) => {
+                            return (
+                                <div key={item.id} >
+                                    <div className="item-info">
+                                        <div className="item-image-quantity">
+                                            <img src={item.image} alt="" />
+                                            <span>{item.quantity}</span>
+                                        </div>
+                                        <div className="item-name">
+                                            <p>{item.name}</p>
+                                            <p>variant?</p>
+                                        </div>
+                                        <p>₦{new Intl.NumberFormat('en-us').format(item.price * item.quantity)}</p>
+                                    </div>
+                                </div>
+                            )
+                        })
+                    }
+                    <div className="checkout-info">
+                        <div className="checkout-infos">
+                            <p>Subtotal</p>
+                            <p>₦{new Intl.NumberFormat('en-us').format(calculateSubTotal())}</p>
+                        </div>
+                        <div className="checkout-infos">
+                            <p>Shipping</p>
+                            <p>₦{0}</p>
+                        </div>
+                        <div className="checkout-infos">
+                            <p>Estimated tax</p>
+                            <p>₦{new Intl.NumberFormat('en-us', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(calculateTax())}</p>
+                        </div>
+                        <div className="checkout-infos">
+                            <p>Tip</p>
+                            <p>₦{0}</p>
+                        </div>
+                        <div className="checkout-infos total">
+                            <p>Total</p>
+                            <p>₦{new Intl.NumberFormat('en', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(calculateTotal())}</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     );
