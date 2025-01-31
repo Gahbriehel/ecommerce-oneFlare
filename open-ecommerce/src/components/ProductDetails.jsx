@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 import './css/productDetails.css';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FiShare } from "react-icons/fi";
 import Footer from './Country';
 import { FaRegTrashAlt, FaArrowLeft } from "react-icons/fa";
@@ -9,6 +9,7 @@ import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 const ProductDetails = ({ addToCart, cartItems, updateQuantity }) => {
     const location = useLocation();
+    const navigate = useNavigate();
     const { product, products } = location.state;
 
     const cartItem = cartItems.find((item) => item.id === product.id)
@@ -33,6 +34,11 @@ const ProductDetails = ({ addToCart, cartItems, updateQuantity }) => {
     const closeCheckoutPanel = () => {
         setShowCheckout(false);
     };
+
+    const proceedToCheckout = () => {
+        addToCart(product);
+        navigate('/checkout')
+    }
 
     const scrollMoreProducts = (direction) => {
         if (moreProductsRef.current) {
@@ -165,7 +171,8 @@ const ProductDetails = ({ addToCart, cartItems, updateQuantity }) => {
                                     </div>
                                     <div className='complete-checkout'>
                                         <p>Taxes and shipping will be calculated at checkout</p>
-                                        <Link to='/checkout'><button className='action-btns checkout'>Checkout</button></Link>
+                                        <button onClick={proceedToCheckout} className='action-btns checkout'>Checkout</button>
+
                                     </div>
                                 </div>
                             </div>
