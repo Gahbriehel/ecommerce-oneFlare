@@ -3,7 +3,7 @@ const homeProducts = [
         "id": 1,
         "name": "Lorem ipsum.",
         "oldPrice": 48000.00,
-        "price": 11000.00,
+        "price": 11000.50,
         "image": "/images/extra/extra9.jpeg",
         "category": "Bags",
         "images": {
