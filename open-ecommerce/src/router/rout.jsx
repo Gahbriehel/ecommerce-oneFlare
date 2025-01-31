@@ -13,7 +13,7 @@ const Rout = ({ addToCart, removeFromCart, cartItems, updateQuantity }) => {
     <>
       <Routes>
         <Route path='/' element={<Home addToCart={addToCart} />} />
-        <Route path='/checkout' element={<Checkout />} />
+        <Route path='/checkout' element={<Checkout cartItems={cartItems} />} />
         <Route path='/product/:id' element={<ProductDetails addToCart={addToCart} cartItems={cartItems} updateQuantity={updateQuantity} />} />
         <Route path='/cart' element={<CartPage cartItems={cartItems} removeFromCart={removeFromCart} updateQuantity={updateQuantity} />} />
         <Route path='/contact' element={<Contact />} />
