@@ -141,7 +141,7 @@
 }
 
 .item-info img {
-    width: 150px;
+    max-width: 150px;
 }
 
 .item-info span {
