@@ -5,7 +5,7 @@ import { TbShoppingBag } from "react-icons/tb";
 import { useNavigate } from "react-router-dom";
 import QuantityCounter from "./QuantityCounter";
 
-const Cart = ({ isOpen, toggleCart, cartItems, removeFromCart, updateQuantity }) => {
+const Cart = ({ isOpen, toggleCart, cartItems, removeFromCart, addToCart, updateQuantity }) => {
     const navigate = useNavigate();
 
     const navigateFromCart = () => {
@@ -15,6 +15,11 @@ const Cart = ({ isOpen, toggleCart, cartItems, removeFromCart, updateQuantity })
 
     const navigateToCartPage = () => {
         navigate("/cart")
+        toggleCart();
+    }
+
+    const navigateToCheckout = () => {
+        navigate('/checkout')
         toggleCart();
     }
 
@@ -81,7 +86,7 @@ const Cart = ({ isOpen, toggleCart, cartItems, removeFromCart, updateQuantity })
                         <div className="cart-actions">
                             <button onClick={navigateToCartPage} className="action-btn view-cart">View Cart</button>
                             <br />
-                            <button className="action-btn checkout">Checkout</button>
+                            <button onClick={navigateToCheckout} className="action-btn checkout">Checkout</button>
                         </div>
                     </>
                 )}
