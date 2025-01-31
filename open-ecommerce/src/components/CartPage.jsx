@@ -3,7 +3,7 @@ import Footer from "./Country";
 import { TbShoppingBag } from "react-icons/tb";
 import { FaRegTrashAlt } from "react-icons/fa";
 import QuantityCounter from './QuantityCounter';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 // import QuantityCounter from './QuantityCounter'
@@ -85,7 +85,7 @@ const CartPage = ({ cartItems, updateQuantity, removeFromCart }) => {
                                 <hr />
                                 <p>Taxes and shipping will be calculated at checkout</p>
                                 <hr />
-                                <button>Proceed to Checkout</button>
+                                <Link to='/checkout'><button>Proceed to Checkout</button></Link>
                             </div>
                         </div>
                         <Footer />
