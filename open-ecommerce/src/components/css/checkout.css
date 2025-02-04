@@ -126,14 +126,27 @@
     cursor: pointer;
 }
 
+.payment-section button:hover {
+    background-color: var(--primary-blue-color-hover);
+}
+
 
 /* Right / cart details */
+.checkout-cart-details {
+    /* position: fixed; */
+}
+
 
 .item-info {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    text-align: center;
+    /* text-align: center; */
+}
+
+.item-image-quantity {
+padding: 0 10px 0 0;
+width: 20%;
 }
 
 .item-info * {
@@ -151,6 +164,15 @@
     position: absolute;
     padding: 2px 6px;
     font-size: 12px;
+}
+
+.item-image-quantity {
+}
+
+.item-name {
+    flex: 1;
+    text-align: left;
+    margin: 0 20px;   
 }
 
 .checkout-info .checkout-infos {

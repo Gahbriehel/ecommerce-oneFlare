@@ -1,5 +1,6 @@
 import { useState } from "react";
 import './css/checkout.css'
+import { Outlet } from "react-router-dom";
 
 const Checkout = ({ cartItems }) => {
     const [billingOption, setBillingOption] = useState("same");
@@ -257,15 +258,18 @@ const Checkout = ({ cartItems }) => {
                     </div>
                     {tipSection()}
                     {renderPaymentSection()}
+                    <Outlet />
                 </form>
             </div>
             <div className="checkout-right">
-                <h2 style={{ textAlign: 'center', fontWeight: 500, color: 'var(--primary-blue-color)' }}>Checkout items</h2>
+                {/* <h2 style={{ fontWeight: 500, margin: '10px 0' }}>My Order</h2> */}
                 <div className="checkout-cart-details">
+                    <h2 style={{ fontWeight: 600, margin: '10px 0' }}>My Order</h2>
+                    <hr />
                     {
                         cartItems.map((item) => {
                             return (
-                                <div key={item.id} >
+                                <div key={item.id} className="fixer">
                                     <div className="item-info">
                                         <div className="item-image-quantity">
                                             <img src={item.image} alt="" />
@@ -284,7 +288,7 @@ const Checkout = ({ cartItems }) => {
                     <div className="checkout-info">
                         <div className="checkout-infos">
                             <p>Subtotal</p>
-                            <p>₦{new Intl.NumberFormat('en-us').format(calculateSubTotal())}</p>
+                            <p>₦{new Intl.NumberFormat('en-us', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(calculateSubTotal())}</p>
                         </div>
                         <div className="checkout-infos">
                             <p>Shipping</p>
