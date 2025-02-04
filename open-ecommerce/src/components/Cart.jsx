@@ -53,8 +53,8 @@ const Cart = ({ isOpen, toggleCart, cartItems, removeFromCart, addToCart, update
                             <div className="cart-item-info">
                                 <h3>{item.name}</h3>
                                 <div className="item-prices">
-                                    <p className="checkout-old-price">₦{new Intl.NumberFormat("en-us").format(item.oldPrice)}</p>
-                                    <p className="checkout-price">₦{new Intl.NumberFormat("en-us").format(item.price)}</p>
+                                    <p className="checkout-old-price">₦{new Intl.NumberFormat("en-us", { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(item.oldPrice)}</p>
+                                    <p className="checkout-price">₦{new Intl.NumberFormat("en-us", { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(item.price)}</p>
                                 </div>
                                 <p>Quantity: {item.quantity}</p>
                                 <p>Color</p>
@@ -80,7 +80,7 @@ const Cart = ({ isOpen, toggleCart, cartItems, removeFromCart, addToCart, update
                         <div className="cart-subtotal">
                             <span>Subtotal:</span>
                             <span>
-                                ₦{new Intl.NumberFormat("en-us").format(calculateSubtotal())}
+                                ₦{new Intl.NumberFormat("en-us", { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(calculateSubtotal())}
                             </span>
                         </div>
                         <div className="cart-actions">
