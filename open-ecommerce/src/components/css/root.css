@@ -10,6 +10,7 @@
 
     /* Border colors */
     --gray-border-color: #808080;
+    --off-white-border-color:#ced1d1;
     --ash-border-color: #B0B2B2;
 
 
@@ -19,4 +20,5 @@
     --black-btn-color: #000000;
     --off-white-btn-color: #EDEBE9;
     --purple-btn-color: #5153E7;
+    --success-color: #1FAF38;
 }
