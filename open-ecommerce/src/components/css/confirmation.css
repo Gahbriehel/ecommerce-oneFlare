@@ -1,0 +1,57 @@
+.confirmation-container {
+    padding: 20px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.confirmation-notif {
+   padding: 20px 0 30px 0;
+}
+
+.confirmation-notif .check {
+    font-size: 80px;
+    color: var(--success-color);
+    animation: checkmark-animation 2s ease-in-out;
+}
+
+@keyframes checkmark-animation {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.confirmation-notif .success-text {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.confirmation-container-btns  {
+    /* font-size: 21px; */
+}
+
+.confirmation-container-btns button {
+    padding: 15px 0;
+    margin: 10px 0;
+    color: #ffffff;
+    width: 50%;
+    background-color: var(--primary-blue-color);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+.confirmation-container-btns button:hover {
+    background-color: var(--primary-blue-color-hover);
+}
