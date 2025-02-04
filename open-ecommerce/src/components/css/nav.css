@@ -60,10 +60,14 @@
 
 .search-input {
     padding: 14px 10px;
-    border: none;
+    border: .1px solid var(--gray-border-color);
     border-radius: 10px;
     background-color: var(--primary-gray-color);
     width: 200px;
+}
+
+.search-input:focus {
+    outline: none;
 }
 
 .search-input::placeholder {
