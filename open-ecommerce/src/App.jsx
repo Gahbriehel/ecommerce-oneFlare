@@ -15,14 +15,21 @@ function App() {
   const addToCart = (product) => {
     console.log('Adding item to cart:', product);
 
-    const exists = cartItems.some((item) => item.id === product.id);
+    setCartItems((prevItems) => {
+      const exists = prevItems.find((item) => item.id === product.id);
 
-    if (!exists) {
-      setCartItems((prevItems) => [...prevItems, { ...product, quantity: 1 }]);
-    } else {
-      console.log('Item already exists in the cart. Skipping.');
-    }
+      if (exists) {
+        return prevItems.map((item) =>
+          item.id === product.id
+            ? { ...item, quantity: item.quantity + product.quantity } // Update quantity
+            : item
+        );
+      } else {
+        return [...prevItems, { ...product, quantity: product.quantity }];
+      }
+    });
   };
+
 
   const removeFromCart = (id) => {
     setCartItems((prevItems) => prevItems.filter((item) => item.id !== id));
@@ -41,7 +48,7 @@ function App() {
   return (
     <BrowserRouter>
       <Nav toggleCart={toggleCart} cartItemsCount={cartItems.length} />
-      <Rout addToCart={addToCart} cartItems={cartItems} removeFromCart={removeFromCart} updateQuantity={updateQuantity} />
+      <Rout toggleCart={toggleCart} addToCart={addToCart} cartItems={cartItems} removeFromCart={removeFromCart} updateQuantity={updateQuantity} />
       <Cart
         isOpen={isCartOpen}
         toggleCart={toggleCart}
