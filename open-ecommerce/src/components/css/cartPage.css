@@ -82,15 +82,18 @@ tbody {
 }
 
 .table-details button {
-font-size: 18px;
-border: none;
-background-color: white;
 cursor: pointer;
 }
 
-.table-details::after {
-    border: 4px solid rebeccapurple;
+.del-btn-cart {
+    border: none;
 }
+
+/* .table-details button */
+
+/* .table-details::after {
+    border: 4px solid rebeccapurple;
+} */
 
 /* Checkout */
 
@@ -98,7 +101,7 @@ cursor: pointer;
     display: flex;
     align-items: center;
     width: 100%;
-    margin-top: 20px;
+    margin: 20px 0 100px 0;
     justify-content: space-around;
 
 }
@@ -118,6 +121,10 @@ cursor: pointer;
     cursor: pointer;
 }
 
+.cartPage-checkout-container .checkout-coupon button:hover {
+    background-color: var(--primary-blue-color-hover);
+    
+}
 
 .cartPage-checkout {
     width: 50%;

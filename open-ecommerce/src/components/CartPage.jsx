@@ -50,7 +50,7 @@ const CartPage = ({ cartItems, updateQuantity, removeFromCart }) => {
                                                             <img src={item.image} alt="item image" />
                                                             <span> {item.name}</span>
                                                         </td>
-                                                        <td>₦{new Intl.NumberFormat('en-us').format(item.price)}</td>
+                                                        <td>₦{new Intl.NumberFormat('en-us', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(item.price)}</td>
                                                         <td>
                                                             <QuantityCounter
                                                                 className="item-quantityy"
@@ -60,8 +60,8 @@ const CartPage = ({ cartItems, updateQuantity, removeFromCart }) => {
                                                                 }}
                                                             />
                                                         </td>
-                                                        <td>₦{new Intl.NumberFormat('en-us').format(item.price * item.quantity)}</td>
-                                                        <td><button onClick={() => removeFromCart(item.id)}><FaRegTrashAlt /></button></td>
+                                                        <td>₦{new Intl.NumberFormat('en-us', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(item.price * item.quantity)}</td>
+                                                        <td><button onClick={() => removeFromCart(item.id)} className='del-btn-cart'><FaRegTrashAlt className='del-btn-cart' /></button></td>
                                                     </tr>
                                                 </tbody>
                                             </>
@@ -80,7 +80,7 @@ const CartPage = ({ cartItems, updateQuantity, removeFromCart }) => {
                                 <hr />
                                 <div className="total-amount">
                                     <p>Total:</p>
-                                    <p>₦{new Intl.NumberFormat('en-us').format(calculateTotal())}</p>
+                                    <p>₦{new Intl.NumberFormat('en-us', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(calculateTotal())}</p>
                                 </div>
                                 <hr />
                                 <p>Taxes and shipping will be calculated at checkout</p>
