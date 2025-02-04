@@ -28,8 +28,8 @@ const Home = ({ addToCart }) => {
                                             <div className="product-info">
                                                 <Link className='category-link'><p className='product-category-p'>{product.category}</p></Link>
                                                 <p className='product-name-p'>{product.name}</p>
-                                                <p className="old-price">₦{new Intl.NumberFormat('en-us').format(product.oldPrice)}</p>
-                                                <p className="price">₦{new Intl.NumberFormat('en-us').format(product.price)}</p>
+                                                <p className="old-price">₦{new Intl.NumberFormat('en-us', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(product.oldPrice)}</p>
+                                                <p className="price">₦{new Intl.NumberFormat('en-us', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(product.price)}</p>
                                                 <button onClick={() => addToCart(product)}><TbShoppingBag />
                                                     <span className="add-to-cart-text">Add to Cart</span>
                                                 </button>
