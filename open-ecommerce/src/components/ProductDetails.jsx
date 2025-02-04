@@ -13,32 +13,27 @@ const ProductDetails = ({ addToCart, cartItems, updateQuantity }) => {
     const { product, products } = location.state;
 
     const cartItem = cartItems.find((item) => item.id === product.id)
-    const quantity = cartItem ? cartItem.quantity : 1;
-
+    const [quantity, setQuantity] = useState(cartItem ? cartItem.quantity : 1);
     const [mainImage, setMainImage] = useState(product.image)
-
-    const handleMainImageChange = (image) => {
-        console.log(`image ${image} has been clicked`);
-
-        setMainImage(image);
-    }
-
     const [showCheckout, setShowCheckout] = useState(false);
     const moreProductsRef = useRef(null);
 
-    const handleBuyBtnClick = () => {
-        setShowCheckout(true);
-        console.log("Buy it button clicked")
-    };
+    const handleMainImageChange = (image) => { setMainImage(image); }
 
-    const closeCheckoutPanel = () => {
-        setShowCheckout(false);
-    };
+
+    const handleBuyBtnClick = () => { setShowCheckout(true); };
+
+    const closeCheckoutPanel = () => { setShowCheckout(false); };
 
     const proceedToCheckout = () => {
-        addToCart(product);
+        addToCart({ ...product, quantity });
         navigate('/checkout')
     }
+
+    const handleAddToCart = () => {
+        addToCart({ ...product, quantity });
+        console.log("item added to cart", quantity);
+    };
 
     const scrollMoreProducts = (direction) => {
         if (moreProductsRef.current) {
@@ -101,9 +96,9 @@ const ProductDetails = ({ addToCart, cartItems, updateQuantity }) => {
                             </div>
                         </div>
                         <div className='pd-prices'>
-                            <p className="pd-old-price">₦{new Intl.NumberFormat('en-us').format(product.oldPrice)} </p>
-                            <p className="pd-price">₦{new Intl.NumberFormat('en-us').format(product.price)}</p>
-                            <p className='pd-in-stock'>In stock</p>
+                            <p className="pd-old-price">₦{product.oldPrice.toFixed(2)} </p>
+                            <p className="pd-price">₦{product.price.toFixed(2)}</p>
+                            <p className='pd-in-stock' style={{ color: 'var(--purple-btn-color)' }}>In stock</p>
                         </div>
                         <div className='pd-product-color-select'>
                             <p className='pd-category-text'>Category: {product.category}</p>
@@ -120,11 +115,9 @@ const ProductDetails = ({ addToCart, cartItems, updateQuantity }) => {
                         <p className='quantity-text'>Quantity</p>
                         <QuantityCounter
                             quantity={quantity}
-                            onUpdateQuantity={(newQuantity) => {
-                                updateQuantity(product.id, newQuantity)
-                            }}
+                            onUpdateQuantity={setQuantity}
                         />
-                        <button className='action-btns pd-btn' onClick={() => addToCart(product)}>Add to cart</button>
+                        <button className='action-btns pd-btn' onClick={handleAddToCart}>Add to cart</button>
                         <br />
                         <button className='action-btns buy-btn' onClick={handleBuyBtnClick}>Buy it now</button>
                         <br />
@@ -144,19 +137,17 @@ const ProductDetails = ({ addToCart, cartItems, updateQuantity }) => {
                                 <div className='checkout-product-info'>
                                     <h3>{product.name}</h3>
                                     <div className='checkout-prices'>
-                                        <p className="checkout-old-price">₦{new Intl.NumberFormat('en-us').format(product.oldPrice)} </p>
-                                        <p className="checkout-price">₦{new Intl.NumberFormat('en-us').format(product.price)}</p>
+                                        <p className="checkout-old-price">₦{new Intl.NumberFormat('en-us', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(product.oldPrice)} </p>
+                                        <p className="checkout-price">₦{new Intl.NumberFormat('en-us', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(product.price)}</p>
                                         <p className='pd-in-stock1'>In stock</p>
                                     </div>
                                     <p style={{ margin: "10px" }}>Color</p>
                                     <div className='quantity-container'>
                                         <QuantityCounter
                                             quantity={quantity}
-                                            onUpdateQuantity={(newQuantity) => {
-                                                updateQuantity(product.id, newQuantity)
-                                            }}
+                                            onUpdateQuantity={setQuantity}
                                         />
-                                        <button className='del-btn'><FaRegTrashAlt className='del-btn' /></button>
+                                        {/* <button className='del-btn'><FaRegTrashAlt className='del-btn' /></button> */}
                                     </div>
                                 </div>
                             </div>
@@ -167,7 +158,7 @@ const ProductDetails = ({ addToCart, cartItems, updateQuantity }) => {
                                 <div className='checkout'>
                                     <div className='subtotal'>
                                         <p>Subtotal</p>
-                                        <p>₦ {new Intl.NumberFormat('en-us').format(product.price)}</p>
+                                        <p>₦ {new Intl.NumberFormat('en-us', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(product.price)}</p>
                                     </div>
                                     <div className='complete-checkout'>
                                         <p>Taxes and shipping will be calculated at checkout</p>
@@ -196,8 +187,8 @@ const ProductDetails = ({ addToCart, cartItems, updateQuantity }) => {
                                 </div>
                                 <div className="spd-product-info">
                                     <p>{product.name}</p>
-                                    <p className="spd-old-price">₦ {new Intl.NumberFormat('en-us').format(product.oldPrice)}</p>
-                                    <p className="spd-price">₦ {new Intl.NumberFormat('en-us').format(product.price)}</p>
+                                    <p className="spd-old-price">₦{new Intl.NumberFormat('en-us', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(product.oldPrice)}</p>
+                                    <p className="spd-price">₦{new Intl.NumberFormat('en-us', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(product.price)}</p>
                                 </div>
                             </div>
                         ))}

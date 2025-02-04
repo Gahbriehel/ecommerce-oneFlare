@@ -122,6 +122,10 @@
     border-radius: 5px;
 }
 
+.pd-product-color-select select:focus {
+    outline: none;
+}
+
 .pd-category-text,
 .pd-barcode {
     font-size: 14px;
@@ -146,9 +150,20 @@
     background-color: var(--white-text-color);
 }
 
+.pd-btn:hover {
+    background-color: var(--off-white-border-color);
+    /* color: var(--white-text-color); */
+
+}
+
 .buy-btn {
     background-color: var(--primary-blue-color);
     color: var(--white-text-color);
+}
+
+.buy-btn:hover {
+    background-color: var(--primary-blue-color-hover);
+
 }
 
 /* More Products Section */
@@ -243,7 +258,7 @@
     top: 0;
     right: 0;
     width: 100%;
-    max-width: 700px;
+    max-width: 500px;
     height: 100vh;
     background-color: white;
     box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
@@ -296,7 +311,7 @@
 }
 
 .checkout-product-image img {
-    width: 200px;
+    width: 150px;
     height: auto;
     border-radius: 10px;
 }
