@@ -22,3 +22,72 @@
     margin-top: 30px;
     font-size: 14px;
 } 
+
+@media (max-width: 1280px) {
+    .footer-container {
+        padding: 15px;
+    }
+
+    .socials {
+        margin: 15px 0 0 15px;
+    }
+
+    .socials .social-icons img {
+        margin-right: 15px;
+        margin-top: 8px;
+    }
+
+    .country select {
+        width: 15%;
+    }
+
+    .footer-container p {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        padding: 10px;
+    }
+
+    .socials {
+        margin: 10px 0 0 10px;
+    }
+
+    .socials .social-icons img {
+        margin-right: 10px;
+        margin-top: 6px;
+    }
+
+    .country select {
+        width: 20%;
+    }
+
+    .footer-container p {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-container {
+        padding: 5px;
+    }
+
+    .socials {
+        margin: 5px 0 0 5px;
+    }
+
+    .socials .social-icons img {
+        margin-right: 5px;
+        margin-top: 4px;
+    }
+
+    .country select {
+        width: 30%;
+    }
+
+    .footer-container p {
+        font-size: 11px;
+    }
+}
