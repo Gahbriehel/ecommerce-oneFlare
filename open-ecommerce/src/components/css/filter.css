@@ -15,6 +15,10 @@
     font-size: 15px;
 }
 
+.filters-toggler {
+    display: none;
+}
+
 .filter-container {
     display: flex;
     justify-content: space-between;
@@ -141,5 +145,13 @@
 
     .filter-section-text {
         font-size: 14px;
+    }
+
+    .filters-toggler {
+        display: block;
+        background-color: white;
+        border: none;
+        cursor: pointer;
+        font-size: 18px;
     }
 }
