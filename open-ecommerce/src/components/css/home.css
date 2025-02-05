@@ -136,6 +136,6 @@
 
 @media (max-width: 480px) {
     .products {
-        grid-template-columns: 1fr; /* 1 column (stacked) */
+        grid-template-columns:  repeat(2, 1fr);; 
     }
 }
