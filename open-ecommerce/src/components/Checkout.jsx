@@ -9,7 +9,7 @@ const Checkout = ({ cartItems }) => {
         setBillingOption(e.target.value);
     };
 
-    const originalTaxPercent = 7.5
+    const originalTaxPercent = 10
 
     const calculateSubTotal = () =>
         cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
