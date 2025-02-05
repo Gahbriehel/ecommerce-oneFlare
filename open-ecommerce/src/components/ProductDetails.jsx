@@ -3,11 +3,12 @@ import './css/productDetails.css';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FiShare } from "react-icons/fi";
 import Footer from './Country';
-import { FaRegTrashAlt, FaArrowLeft } from "react-icons/fa";
+import { FaArrowLeft } from "react-icons/fa";
 import QuantityCounter from './QuantityCounter';
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
-const ProductDetails = ({ addToCart, cartItems, updateQuantity }) => {
+const ProductDetails = ({ addToCart, cartItems, updateQuantity, toggleCart }) => {
+    const cart = document.querySelector('.back-btn')
     const location = useLocation();
     const navigate = useNavigate();
     const { product, products } = location.state;
@@ -30,9 +31,18 @@ const ProductDetails = ({ addToCart, cartItems, updateQuantity }) => {
         navigate('/checkout')
     }
 
+    const notHandleAddToCart = () => {
+        if (!cart) {
+            toggleCart()
+            console.log("Should toggle here");
+
+        }
+    }
+
     const handleAddToCart = () => {
         addToCart({ ...product, quantity });
         console.log("item added to cart", quantity);
+        toggleCart()
     };
 
     const scrollMoreProducts = (direction) => {
@@ -47,7 +57,7 @@ const ProductDetails = ({ addToCart, cartItems, updateQuantity }) => {
     };
 
     return (
-        <div className='pd-product-container'>
+        <div className='pd-product-container' onClick={notHandleAddToCart}>
             <div className='pd-product-details'>
                 <div className="details-div">
                     <div className='pd-product-image'>
