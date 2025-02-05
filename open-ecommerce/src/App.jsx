@@ -5,6 +5,7 @@ import Nav from './components/Nav';
 import Cart from './components/Cart';
 
 function App() {
+  const [isSliderOpen, setIsSliderOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [cartItems, setCartItems] = useState([]);
 
@@ -12,23 +13,56 @@ function App() {
     setIsCartOpen((prev) => !prev);
   };
 
+  const toggleSlider = () => {
+    setIsSliderOpen((prev) => !prev)
+  }
+
+  // const addToCart = (product) => {
+  //   console.log('Adding item to cart:', product);
+
+  //   setCartItems((prevItems) => {
+  //     const exists = prevItems.find((item) => item.id === product.id);
+
+  //     if (exists) {
+  //       return prevItems.map((item) =>
+  //         item.id === product.id
+  //           ? { ...item, quantity: item.quantity + product.quantity } // Update quantity
+  //           : item
+  //       );
+  //     } else {
+  //       return [...prevItems, { ...product, quantity: product.quantity }];
+  //     }
+  //   });
+  // };
+
+  // const addToCart = (product) => {
+  //   console.log('Adding item to cart:', product);
+
+  //   setCartItems((prevItems) => {
+  //     const exists = prevItems.some((item) => item.id === product.id);
+
+  //     return exists
+  //       ? prevItems.map((item) =>
+  //         item.id === product.id
+  //           ? { ...item, quantity: item.quantity + product.quantity } // Update quantity
+  //           : item
+  //       )
+  //       : [...prevItems, { ...product, quantity: product.quantity }];
+  //   });
+  // };
+
   const addToCart = (product) => {
     console.log('Adding item to cart:', product);
 
     setCartItems((prevItems) => {
-      const exists = prevItems.find((item) => item.id === product.id);
+      const exists = prevItems.some((item) => item.id === product.id);
 
-      if (exists) {
-        return prevItems.map((item) =>
-          item.id === product.id
-            ? { ...item, quantity: item.quantity + product.quantity } // Update quantity
-            : item
-        );
-      } else {
-        return [...prevItems, { ...product, quantity: product.quantity }];
-      }
+      return exists
+        ? prevItems
+        : [...prevItems, { ...product, quantity: product.quantity || 1 }];
     });
   };
+
 
 
   const removeFromCart = (id) => {
