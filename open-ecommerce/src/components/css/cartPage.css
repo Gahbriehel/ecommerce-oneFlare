@@ -168,3 +168,75 @@ cursor: pointer;
 .cartPage-checkout button:hover {
     background-color: var(--primary-blue-color-hover);
 }
+
+@media (max-width: 1280px) {
+    .cartPage-container {
+        padding: 50px 0;
+    }
+
+    .cartPage-checkout {
+        width: 60%;
+    }
+}
+
+@media (max-width: 768px) {
+    .cartPage-container {
+        padding: 30px 0;
+    }
+
+    .cartPage-checkout-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cartPage-checkout {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .cartPage-checkout-container .checkout-coupon {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cartPage-container {
+        padding: 20px 0;
+    }
+
+    .cartPage-checkout-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cartPage-checkout {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .cartPage-checkout-container .checkout-coupon {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .cart-item-image img {
+        max-width: 100px;
+    }
+
+    .cart-item-image span {
+        margin-left: 10px;
+    }
+
+    .cartPage-checkout .total-amount p {
+        font-size: 14px;
+    }
+
+    .cartPage-checkout p {
+        font-size: 12px;
+    }
+
+    .cartPage-checkout button {
+        font-size: 14px;
+    }
+}
