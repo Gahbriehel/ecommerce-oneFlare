@@ -40,12 +40,12 @@ const CartPage = ({ cartItems, updateQuantity, removeFromCart }) => {
                                         <th>subtotal</th>
                                     </tr>
                                 </thead>
-                                {
-                                    cartItems.map((item) => {
-                                        return (
-                                            <>
-                                                <tbody key={item.id}>
-                                                    <tr className='table-details'>
+                                <tbody>
+                                    {
+                                        cartItems.map((item) => {
+                                            return (
+                                                <>
+                                                    <tr key={item.id} className='table-details'>
                                                         <td className='cart-item-image'>
                                                             <img src={item.image} alt="item image" />
                                                             <span> {item.name}</span>
@@ -63,11 +63,11 @@ const CartPage = ({ cartItems, updateQuantity, removeFromCart }) => {
                                                         <td>₦{new Intl.NumberFormat('en-us', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(item.price * item.quantity)}</td>
                                                         <td><button onClick={() => removeFromCart(item.id)} className='del-btn-cart'><FaRegTrashAlt className='del-btn-cart' /></button></td>
                                                     </tr>
-                                                </tbody>
-                                            </>
-                                        )
-                                    })
-                                }
+                                                </>
+                                            )
+                                        })
+                                    }
+                                </tbody>
                             </table>
                         </div>
                         <div className="cartPage-checkout-container">
