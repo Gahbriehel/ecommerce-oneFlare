@@ -23,6 +23,7 @@ const Home = ({ addToCart }) => {
                                     <div>
                                         <div className="box">
                                             <div className="image-box">
+                                                <span className='sale-text'>sale</span>
                                                 <Link to={`/product/${product.id}`} state={{ product, products }}><img src={product.image} alt="product" className="product-image"></img></Link>
                                             </div>
                                             <div className="product-info">

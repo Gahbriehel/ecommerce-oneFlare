@@ -19,6 +19,7 @@
     gap: 20px;
     margin-top: 40px;
     padding: 0 20px;
+    font-family: 'Helvetica Light';
 }
 
 .box {
@@ -39,6 +40,18 @@
     height: 200px;
 }
 
+.sale-text {
+    color: white;
+    padding: 4px 10px;
+    font-size: 14px;
+    background-color: var(--purple-btn-color);
+    border-radius: 10px;
+    position: relative;
+    top: 80%;
+    left: 5%;
+    z-index: 1000;
+}
+
 .product-image {
     width: 100%;
     height: 100%;
@@ -47,7 +60,7 @@
 }
 
 .image-box:hover .product-image {
-    transform: scale(1.4);
+    transform: scale(1.1);
 }
 
 .product-info {
