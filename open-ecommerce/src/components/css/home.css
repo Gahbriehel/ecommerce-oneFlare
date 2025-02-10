@@ -49,7 +49,7 @@
     position: relative;
     top: 80%;
     left: 5%;
-    z-index: 1000;
+    z-index: 600;
 }
 
 .product-image {
@@ -78,7 +78,7 @@
     cursor: pointer;
     font-size: 24px;
     font-weight: 400;
-    color: S;
+    /* color: S; */
     margin-top: 10px;
     position: relative;
     display: flex;
