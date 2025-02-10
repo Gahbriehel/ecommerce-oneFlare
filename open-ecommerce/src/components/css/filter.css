@@ -2,12 +2,14 @@
     padding: 0 40px;
     max-width: 1600px;
     margin: 0 auto;
+    font-family: 'Helvetica';
 }
 
 .products-section h1 {
     margin-top: 10px;
     margin-bottom: 30px;
     font-size: 24px;
+    font-weight: 400;
 }
 
 .products-form {
@@ -35,6 +37,8 @@
 .filter-section-text {
     margin-right: 10px;
     font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
 .filter-input {

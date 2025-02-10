@@ -1,5 +1,5 @@
 import { MdKeyboardArrowDown } from "react-icons/md";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import homeProducts from "./Homeproducts";
 import { GiSettingsKnobs } from "react-icons/gi";
 import './css/filter.css'
@@ -7,11 +7,13 @@ const Filters = () => {
     const [products, setProducts] = useState(homeProducts)
     console.log(setProducts)
 
-    const [showFilters, setShowFilters] = useState(false)
+    // const [showFilters, setShowFilters] = useState(false)
     const [openAvailability, setOpenAvailability] = useState(false)
     const [openPriceFilter, setOpenPriceFilter] = useState(false)
     const [openCategoryFilter, showOpenCategoryFilter] = useState(false)
     const [openAlphabetFilter, setOpenAlphabetFilter] = useState(false)
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 480)
+    const [showFilters, setShowFilters] = useState(!isMobile)
 
     const handleShowFilters = (e) => {
         e.preventDefault(setShowFilters(!showFilters))
@@ -33,6 +35,19 @@ const Filters = () => {
         e.preventDefault(setOpenAlphabetFilter(!openAlphabetFilter))
     }
 
+    useEffect(() => {
+        const handleResize = () => {
+            const mobile = window.innerWidth <= 480;
+            setIsMobile(mobile);
+            if (!mobile) {
+                setShowFilters(true);
+            }
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
     return (
         <div className="products-section">
             <h1>Products</h1>
@@ -47,7 +62,7 @@ const Filters = () => {
                             showFilters && (
                                 <div className="filter-section">
                                     <div className="filter-section-text">
-                                        <p><strong>Filter:</strong></p>
+                                        <p>Filter :</p>
                                     </div>
                                     <div className="filter-input">
                                         <button onClick={handleShowAvailability} className="availability-btn">
