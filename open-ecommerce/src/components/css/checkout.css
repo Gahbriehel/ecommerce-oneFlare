@@ -188,6 +188,35 @@ width: 20%;
 
 
 /* Media Queries */
+
+@media (min-width: 1024px) {
+    .checkout-page-container {
+        padding: 40px 100px;
+        gap: 40px;
+    }
+
+    .payment-section .payment-logos img {
+        max-height: 70px;
+    }
+
+    .postal-code label {
+        font-size: 15px;
+    }
+
+    .order-section {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .order-section .order-summary {
+        width: 65%;
+    }
+
+    .order-section .order-details {
+        width: 30%;
+    }
+}
+
 @media (min-width: 768px) {
     .checkout-contact {
         width: 65%;
@@ -204,19 +233,45 @@ width: 20%;
     .tip-section .tip-buttons button {
         padding: 20px 30px;
     }
+
+    .order-section .order-summary {
+        width: 60%;
+    }
+
+    .order-section .order-details {
+        width: 35%;
+    }
 }
 
-@media (min-width: 1024px) {
+@media (max-width: 480px) {
     .checkout-page-container {
-        padding: 40px 100px;
-        gap: 40px;
+        padding: 20px 10px;
+        gap: 10px;
+    }
+
+    .checkout-contact,
+    .checkout-right {
+        width: 100%;
+    }
+
+    .form-container .billing-options .billing-option {
+        width: 100%;
+    }
+
+    .tip-section .tip-buttons button {
+        padding: 10px 15px;
     }
 
     .payment-section .payment-logos img {
-        max-height: 70px;
+        max-height: 40px;
     }
 
-    .postal-code label {
-        font-size: 15px;
+    .order-section {
+        flex-direction: column;
+    }
+
+    .order-section .order-summary,
+    .order-section .order-details {
+        width: 100%;
     }
 }

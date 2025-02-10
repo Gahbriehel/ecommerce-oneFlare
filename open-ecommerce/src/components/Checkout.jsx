@@ -15,7 +15,7 @@ const Checkout = ({ cartItems }) => {
         cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
 
     const calculateTax = (taxPercent = originalTaxPercent) => {
-        const tax = calculateSubTotal() / taxPercent;
+        const tax = (calculateSubTotal() * taxPercent) / 100;
         return tax;
     }
     const calculateTotal = () => {
