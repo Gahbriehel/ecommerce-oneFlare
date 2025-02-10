@@ -19,15 +19,7 @@ const Nav = ({ toggleCart, cartItemsCount }) => {
                             </li>
                             <li>
                                 <Link to="/" className="nav-link business-name">
-                                    <strong>Slack Market and Shops</strong>
-                                </Link>
-                            </li>
-                            <li>
-                                <Link
-                                    to="/"
-                                    className={currentPage === '/' ? 'nav-link link-active shop-text' : 'nav-link shop-text'}
-                                >
-                                    Shop
+                                    <span>Slack Market and Shops</span>
                                 </Link>
                             </li>
                         </ul>
