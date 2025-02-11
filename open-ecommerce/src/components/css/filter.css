@@ -2,6 +2,8 @@
     padding: 0 40px;
     max-width: 1600px;
     margin: 0 auto;
+    margin-bottom: 80px;
+
     font-family: 'Helvetica';
 }
 
@@ -85,13 +87,15 @@
 .availability-input,
 .category-input,
 .alpha-category-input {
-    padding: 5px 0;
+    padding: 5px 5px;
+    margin: 2px 0;
     font-size: 14px;
+    border: 1px solid var(--ash-border-color);
 }
 
 .range-input {
     padding: 5px 0;
-    margin: 5px 0;
+    /* margin: 5px 0; */
 }
 
 .range-input input {

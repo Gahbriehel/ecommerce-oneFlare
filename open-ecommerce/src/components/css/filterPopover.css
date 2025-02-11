@@ -1,0 +1,44 @@
+.popover-group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.popover-group p {
+    font-size: 16px;
+    font-family: 'Helvetica';
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-btns {
+    outline: none;
+    padding: 10px 30px;
+    cursor: pointer;
+    border: none;
+    border: 1px solid var(--ash-border-color);
+    border-radius: 5px;
+    color: var(--primary-text-color);
+    background-color: white;
+}
+
+.filter-btns:hover {
+    background: none;
+    outline: none;
+}
+
+.popover-group > * {
+    position: relative;
+}
+
+.filter-btns {
+    
+    /* min-width: 100px; */
+}
+
+.popover-panel {
+    /* width: 100%; */
+}

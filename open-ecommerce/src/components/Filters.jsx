@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import homeProducts from "./Homeproducts";
 import { GiSettingsKnobs } from "react-icons/gi";
 import './css/filter.css'
+import FilterPopover from "./FilterPopover";
 const Filters = () => {
     const [products, setProducts] = useState(homeProducts)
     console.log(setProducts)
@@ -57,7 +58,8 @@ const Filters = () => {
                         <div className="filter-container-text">
                             <p>Showing products 1 - 20 of {products.length} products</p>
                         </div>
-                        <button onClick={handleShowFilters} className="filters-toggler"><GiSettingsKnobs /></button>
+                        <FilterPopover />
+                        {/* <button onClick={handleShowFilters} className="filters-toggler"><GiSettingsKnobs /></button>
                         {
                             showFilters && (
                                 <div className="filter-section">
@@ -150,7 +152,7 @@ const Filters = () => {
                                     </div>
                                 </div>
                             )
-                        }
+                        } */}
                     </div>
                 </form>
             </div>
