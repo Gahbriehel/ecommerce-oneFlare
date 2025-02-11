@@ -23,7 +23,7 @@
 }
 
 .box {
-    height: 350px;
+    height: 360px;
     background-color: var(--border-color);
     overflow: hidden;
     border: 1px solid var(--nav-bg-color-dark);
@@ -65,12 +65,19 @@
 
 .product-info {
     padding: 10px;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px; */
 }
 
 .product-info p {
     margin-top: 5px;
 }
 
+.shoppingBag {
+    color: black;
+}
 
 .product-info button {
     background: none;
@@ -79,10 +86,12 @@
     font-size: 24px;
     font-weight: 400;
     /* color: S; */
-    margin-top: 10px;
+    margin-top: auto;
+    height: 20px;
     position: relative;
     display: flex;
     align-items: center;
+    flex-direction: column;
     gap: 5px;
 }
 
