@@ -1,4 +1,6 @@
 @import '../css/fonts.css';
+@import "@radix-ui/themes/styles.css";
+
 
 body {
   /* font-family: 'Helvetica'; */
