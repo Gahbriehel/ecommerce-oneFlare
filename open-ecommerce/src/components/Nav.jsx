@@ -1,11 +1,9 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { TbShoppingBag } from "react-icons/tb";
 import { IoIosSearch } from "react-icons/io";
 import './css/nav.css';
 
 const Nav = ({ toggleCart, cartItemsCount }) => {
-    const currentPage = useLocation().pathname;
-
     return (
         <>
             <div className="nav-container">
