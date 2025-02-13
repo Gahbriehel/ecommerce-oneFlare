@@ -16,7 +16,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-   
 }
 
 .small-search {
@@ -79,6 +78,7 @@
     border-radius: 10px;
     background-color: var(--primary-gray-text-color);
     width: 200px;
+    /* color: var(--grey-text-color); */
 }
 
 .search-input:focus {
@@ -113,7 +113,7 @@
 }
 
 /* Media Queries */
-@media (max-width: 1200px) {
+@media (max-width: 1280px) {
     .nav-left ul li {
         margin-right: 5rem;
     }
