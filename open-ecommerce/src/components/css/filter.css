@@ -4,6 +4,7 @@
     margin: 0 auto;
     margin-bottom: 80px;
     font-family: 'Helvetica';
+    color: var(--grey-text-color);
 }
 
 .products-section h1 {
