@@ -1,3 +1,5 @@
+import * as React from 'react'
+import useOnClickOutside from 'use-onclickoutside'
 import { FaRegTrashAlt, FaArrowLeft } from "react-icons/fa";
 import "./css/cart.css";
 import PropTypes from "prop-types";
@@ -5,7 +7,18 @@ import { TbShoppingBag } from "react-icons/tb";
 import { useNavigate } from "react-router-dom";
 import QuantityCounter from "./QuantityCounter";
 
-const Cart = ({ isOpen, toggleCart, cartItems, removeFromCart, addToCart, updateQuantity }) => {
+const Cart = ({ isOpen, toggleCart, cartItems, removeFromCart, addToCart, updateQuantity, close }) => {
+    const ref = React.useRef(null)
+    useOnClickOutside(ref, () => {
+        if (isOpen) {
+            toggleCart();
+        }
+    })
+
+    const handleCartClick = (e) => {
+        e.stopPropagation();
+    };
+
     const navigate = useNavigate();
 
     const navigateFromCart = () => {
@@ -27,7 +40,7 @@ const Cart = ({ isOpen, toggleCart, cartItems, removeFromCart, addToCart, update
         cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
 
     return (
-        <div className={`cart-container ${isOpen ? "open" : ""}`}>
+        <div ref={ref} onClick={handleCartClick} className={`cart-container ${isOpen ? "open" : ""}`}>
             <div className="cart-header">
                 <button onClick={toggleCart} className="back-btn">
                     <FaArrowLeft />
@@ -91,7 +104,7 @@ const Cart = ({ isOpen, toggleCart, cartItems, removeFromCart, addToCart, update
                     </>
                 )}
             </div>
-        </div>
+        </div >
     );
 };
 
