@@ -81,6 +81,7 @@
 .pd-product-info-top-name h2 {
     font-weight: 600;
     margin: 0;
+    color: var(--grey-text-color);
 }
 
 .pd-product-info-top-btns {
@@ -107,10 +108,12 @@
 .pd-old-price {
     text-decoration: line-through;
     font-size: 14px;
+    color: var(--secondary-gray-text-color);
 }
 
 .pd-price {
     font-size: 24px;
+    color: var(--grey-text-color);
 }
 
 .pd-in-stock {
@@ -119,6 +122,7 @@
 
 .pd-product-color-select {
     margin: 20px 0;
+    color: var(--grey-text-color);
 }
 
 .pd-product-color-select p {
@@ -130,6 +134,7 @@
     padding: 10px;
     border: 1px solid var(--gray-border-color);
     border-radius: 5px;
+    color: var(--grey-text-color);
 }
 
 .pd-product-color-select select:focus {
@@ -144,6 +149,7 @@
 .quantity-text {
     font-size: 14px;
     margin: 20px 0 10px 0;
+    color: var(--grey-text-color);
 }
 
 .action-btns {
@@ -158,6 +164,7 @@
 
 .pd-btn {
     background-color: var(--white-text-color);
+    color: var(--grey-text-color);
 }
 
 .pd-btn:hover {
@@ -448,13 +455,21 @@
 /* Media Queries */
 
 @media (max-width: 1280px) {
+    .pd-product-container {
+        max-width: 1150px;
+    }
+
     .pd-product-color-select select {
-        width: 60%;
+        width: 70%;
     }
     
     .action-btns {
         width: 60%;
     }
+
+    /* .pd-product-image {
+        max-width: 650px;
+    } */
 }
 
 @media (max-width: 768px) {
