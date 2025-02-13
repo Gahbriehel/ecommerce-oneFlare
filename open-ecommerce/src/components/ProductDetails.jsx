@@ -1,4 +1,6 @@
 import { useRef, useState } from 'react';
+import * as React from 'react'
+import useOnClickOutside from 'use-onclickoutside';
 import './css/productDetails.css';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FiShare } from "react-icons/fi";
@@ -8,7 +10,7 @@ import QuantityCounter from './QuantityCounter';
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 const ProductDetails = ({ addToCart, cartItems, updateQuantity, toggleCart }) => {
-    const cart = document.querySelector('.back-btn')
+
     const location = useLocation();
     const navigate = useNavigate();
     const { product, products } = location.state;
@@ -17,29 +19,38 @@ const ProductDetails = ({ addToCart, cartItems, updateQuantity, toggleCart }) =>
     const [quantity, setQuantity] = useState(cartItem ? cartItem.quantity : 1);
     const [mainImage, setMainImage] = useState(product.image)
     const [showCheckout, setShowCheckout] = useState(false);
+    const [isClosing, setIsClosing] = useState(false);
     const moreProductsRef = useRef(null);
+    const buyRef = useRef(null);
+
+    useOnClickOutside(buyRef, () => {
+        if (showCheckout) {
+            handleClose();
+        }
+    })
+
+    const handleClose = () => {
+        setIsClosing(true)
+        setTimeout(() => {
+            setShowCheckout(false)
+            setIsClosing(false)
+        }, 300)
+    }
 
     const handleMainImageChange = (image) => { setMainImage(image); }
 
 
     const handleBuyBtnClick = () => { setShowCheckout(true); };
 
-    const closeCheckoutPanel = () => { setShowCheckout(false); };
+    const closeCheckoutPanel = () => { handleClose(); };
 
     const proceedToCheckout = () => {
         addToCart({ ...product, quantity });
         navigate('/checkout')
     }
 
-    const notHandleAddToCart = () => {
-        if (!cart) {
-            toggleCart()
-            console.log("Should toggle here");
-
-        }
-    }
-
-    const handleAddToCart = () => {
+    const handleAddToCart = (e) => {
+        e.stopPropagation();
         addToCart({ ...product, quantity });
         console.log("item added to cart", quantity);
         toggleCart()
@@ -57,7 +68,7 @@ const ProductDetails = ({ addToCart, cartItems, updateQuantity, toggleCart }) =>
     };
 
     return (
-        <div className='pd-product-container' onClick={notHandleAddToCart}>
+        <div className='pd-product-container' >
             <div className='pd-product-details'>
                 <div className="details-div">
                     <div className='pd-product-image'>
@@ -134,7 +145,7 @@ const ProductDetails = ({ addToCart, cartItems, updateQuantity, toggleCart }) =>
                     </div>
                 </div>
                 {showCheckout && (
-                    <div className='checkout-container'>
+                    <div ref={buyRef} className={`checkout-container ${isClosing ? 'hiding' : ''}`}>
                         <div className='checkout-header'>
                             <button onClick={closeCheckoutPanel}><FaArrowLeft /></button>
                             <h2>Buy It Now</h2>
@@ -200,16 +211,16 @@ const ProductDetails = ({ addToCart, cartItems, updateQuantity, toggleCart }) =>
                                     <p className="spd-old-price">₦{new Intl.NumberFormat('en-us', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(product.oldPrice)}</p>
                                     <p className="spd-price">₦{new Intl.NumberFormat('en-us', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(product.price)}</p>
                                 </div>
-                            </div>
+                            </div >
                         ))}
-                    </div>
+                    </div >
                     <button className='scroll-button right' onClick={() => scrollMoreProducts('right')}>
                         <IoIosArrowForward />
                     </button>
-                </div>
-            </div>
+                </div >
+            </div >
             <Footer />
-        </div>
+        </div >
     );
 };
 
