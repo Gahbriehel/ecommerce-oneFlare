@@ -3,7 +3,6 @@
 .home-container {
     padding: 20px 0;
     max-width: 100%;
-    color: var(--gray-text-color);
     font-weight: 400;
     font-family: 'Helvetica';
 }
@@ -74,6 +73,7 @@
 
 .product-info p {
     margin-top: 5px;
+    /* color: var(--gray-text-color); */
 }
 
 .shoppingBag {
@@ -129,6 +129,10 @@
     text-decoration: none;
 }
 
+.product-name-p {
+    color: var(--grey-text-color);
+}
+
 .old-price {
     text-decoration: line-through;
     font-size: 14px;
@@ -138,14 +142,17 @@
 .price {
     font-size: 16px;
     font-weight: 600;
-
+    color: var(--grey-text-color);
 }
-
 
 
 /* Media Queries */
 
 @media (max-width: 1280px) {
+
+    .main-section {
+        max-width: 1150px;
+    }
     .products {
         grid-template-columns: repeat(4, 1fr); /* 3 columns */
     }
