@@ -5,6 +5,7 @@
     max-width: 100%;
     color: var(--gray-text-color);
     font-weight: 400;
+    font-family: 'Helvetica';
 }
 
 .main-section {
