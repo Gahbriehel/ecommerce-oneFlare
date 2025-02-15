@@ -20,6 +20,7 @@ const ProductDetails = ({ addToCart, cartItems, updateQuantity, toggleCart }) =>
     const [mainImage, setMainImage] = useState(product.image)
     const [showCheckout, setShowCheckout] = useState(false);
     const [isClosing, setIsClosing] = useState(false);
+    const [selectedItem, setSelectedItem] = useState('')
     const moreProductsRef = useRef(null);
     const buyRef = useRef(null);
 
@@ -123,14 +124,17 @@ const ProductDetails = ({ addToCart, cartItems, updateQuantity, toggleCart }) =>
                         </div>
                         <div className='pd-product-color-select'>
                             <p className='pd-category-text'>Category: {product.category}</p>
-                            <p>Sub-Category:</p>
-                            <select name="item-color" id="item-color">
-                                <option disabled>Choose item color</option>
-                                <option value="">Brown</option>
-                                <option value="">Black</option>
-                                <option value="">White</option>
-                                <option value="">Blue</option>
-                            </select>
+                            <label>
+                                Sub-Category:
+                                <br />
+                                <select value={selectedItem} onChange={(e) => setSelectedItem(e.target.value)} name="item-color" id="item-color">
+                                    <option disabled>Choose item color</option>
+                                    <option value="Brown">Brown</option>
+                                    <option value="Black">Black</option>
+                                    <option value="White">White</option>
+                                    <option value="Blue">Blue</option>
+                                </select>
+                            </label>
                             <p className='pd-barcode'>SKU: {product.barcode}</p>
                         </div>
                         <p className='quantity-text'>Quantity</p>
@@ -162,8 +166,8 @@ const ProductDetails = ({ addToCart, cartItems, updateQuantity, toggleCart }) =>
                                         <p className="checkout-price">₦{new Intl.NumberFormat('en-us', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(product.price)}</p>
                                         <p className='pd-in-stock1'>In stock</p>
                                     </div>
-                                    <p style={{ margin: "10px" }}>Color</p>
-                                    <div className='quantity-container'>
+                                    <p >{selectedItem}</p>
+                                    <div className='quantity-container small-quantity-counter'>
                                         <QuantityCounter
                                             quantity={quantity}
                                             onUpdateQuantity={setQuantity}
