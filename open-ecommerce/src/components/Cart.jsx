@@ -68,10 +68,11 @@ const Cart = ({ isOpen, toggleCart, cartItems, removeFromCart, addToCart, update
                                 <div className="item-prices">
                                     <p className="checkout-old-price">₦{new Intl.NumberFormat("en-us", { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(item.oldPrice)}</p>
                                     <p className="checkout-price">₦{new Intl.NumberFormat("en-us", { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(item.price)}</p>
+                                    <p className='stock-text' style={{ color: 'var(--purple-btn-color)' }}>In stock</p>
                                 </div>
                                 <p>Quantity: {item.quantity}</p>
                                 <p>Color</p>
-                                <div className='quantity-container'>
+                                <div className='quantity-container small-quantity-counter'>
                                     <QuantityCounter
                                         quantity={item.quantity}
                                         onUpdateQuantity={(newQuantity) =>
@@ -85,6 +86,7 @@ const Cart = ({ isOpen, toggleCart, cartItems, removeFromCart, addToCart, update
                         </div>
                     ))
                 )}
+                <hr />
             </div>
 
             <div className="cart-footer">
