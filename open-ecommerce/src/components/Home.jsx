@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import Filters from './Filters';
 import { TbShoppingBag } from "react-icons/tb";
 import { IconButton, Tooltip } from '@radix-ui/themes';
+import { AddToCartBtn } from '../assets/svg/addToCartBtn';
 
 const Home = ({ addToCart }) => {
     const [products] = useState(homeProducts);
@@ -48,7 +49,7 @@ const Home = ({ addToCart }) => {
                                                     radius="full"
                                                     onClick={() => handleAddToCart(product)}
                                                 >
-                                                    <TbShoppingBag className='shoppingBag' />
+                                                    <AddToCartBtn className='shoppingBag' />
                                                 </IconButton>
                                             </Tooltip>
                                         </div>
