@@ -44,12 +44,12 @@ const Home = ({ addToCart }) => {
                                             </p>
                                         </div>
                                         <div>
-                                            <Tooltip content="Add to cart">
+                                            <Tooltip content="Add to cart" >
                                                 <IconButton
                                                     radius="full"
                                                     onClick={() => handleAddToCart(product)}
                                                 >
-                                                    <AddToCartBtn className='shoppingBag' />
+                                                    <AddToCartBtn />
                                                 </IconButton>
                                             </Tooltip>
                                         </div>
