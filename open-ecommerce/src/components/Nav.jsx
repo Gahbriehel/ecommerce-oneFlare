@@ -34,7 +34,7 @@ const Nav = ({ toggleCart, cartItemsCount }) => {
                             </div>
                         </div>
                         <span onClick={toggleCart} className="cart-icon">
-                            <p><ShoppingCartIcon /></p>
+                            <p><ShoppingCartIcon sty /></p>
                             {cartItemsCount > 0 && <sup className="cart-count">{cartItemsCount}</sup>}
                         </span>
                     </div>

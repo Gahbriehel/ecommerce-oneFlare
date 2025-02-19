@@ -53,7 +53,8 @@
 }
 
 .business-name {
-    font-size: 22px;
+    /* font-size: 22px; */
+    font-weight: 600;
 }
 
 .nav-right {
@@ -75,16 +76,14 @@
     transform: translateY(-50%);
     cursor: pointer;
     font-size: 18px;
-    /* display: none; */
 }
 
 .search-input {
-    padding: 15px 20px;
+    padding: 22px 16px;
     border: none;
     border-radius: 6px;
     background-color: var(--primary-gray-text-color);
-    width: 190px;
-    height: 54px;
+    
 }
 
 .search-input:focus {
@@ -101,7 +100,7 @@
 
 .cart-icon {
     cursor: pointer;
-    font-size: 28px;
+    font-size: 16px;
     position: relative;
 }
 
@@ -132,7 +131,7 @@
     }
 
     .business-name {
-        font-size: 14px;
+        /* font-size: 14px; */
     }
     
 }
