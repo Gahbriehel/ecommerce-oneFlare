@@ -2,8 +2,8 @@ import { Popover, PopoverButton, PopoverPanel, PopoverGroup } from '@headlessui/
 import '../components/css/filterPopover.css'
 import './css/filter.css'
 import { MdKeyboardArrowDown } from 'react-icons/md'
-import homeProducts from "./Homeproducts";
-import { useState } from 'react'
+// import homeProducts from "./Homeproducts";
+// import { useState } from 'react'
 
 
 const FilterPopover = () => {

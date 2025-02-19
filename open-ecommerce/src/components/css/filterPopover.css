@@ -5,15 +5,22 @@
 }
 
 .popover-group p {
-    font-size: 20px;
-    font-weight: 700;
+    font-size: 16px;
     /* color: var(--grey-text-color); */
     font-family: 'Helvetica';
 }
 
 .popover-group label {
     font-family: 'Helvetica';
+    color: var(--grey-text-color);
     
+}
+
+.popover-panel span,
+.popover-panel label {
+    color: var(--grey-text-color);
+    font-size: 12px;
+
 }
 
 .flex-col {
@@ -31,7 +38,7 @@
     color: var(--grey-text-color);
     background-color: white;
     font-family: 'Helvetica';
-    font-size: 20px;
+    /* font-size: 20px; */
 }
 
 .filter-btns:hover {
